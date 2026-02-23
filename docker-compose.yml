@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: express_api
+    build: .
+    ports:
+      - "2009:2009"
+    environment:
+      MYSQL_HOST: mysql_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: example123
+      MYSQL_DATABASE: android_api
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    restart: always
+
+  mysql_db:
+    container_name: mysql_server
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: example123
+      MYSQL_DATABASE: android_api
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      retries: 10
+      timeout: 5s
+
+volumes:
+  mysql_data:
