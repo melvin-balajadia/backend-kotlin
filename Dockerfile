@@ -27,4 +27,4 @@ EXPOSE 2009
 # -----------------------------
 # 6. Start the server
 # -----------------------------
-CMD ["node", "src/index.js"]
+CMD ["node", "index.js"]
