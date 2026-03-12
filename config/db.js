@@ -6,7 +6,7 @@ const mysqlPool = mysql.createPool({
   host: process.env.MYSQL_HOST || "localhost",
   user: process.env.MYSQL_USER || "root",
   password: process.env.MYSQL_PASSWORD || "Castrol12",
-  database: process.env.MYSQL_DATABASE || "android_api",
+  database: process.env.MYSQL_DATABASE || "cargil_system_db",
   waitForConnections: true,
   connectionLimit: 10,
 });

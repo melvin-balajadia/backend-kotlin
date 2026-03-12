@@ -8,7 +8,7 @@ import hpp from "hpp";
 
 import db from "./config/db.js";
 import logger from "./config/logger.js";
-import productionRoutes from "./routes/production.routes.js";
+import transactionEntriesRoutes from "./routes/transactions.routes.js";
 import errorHandler from "./middleware/errorHandler.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 
@@ -43,7 +43,7 @@ app.use(
 );
 
 // ROUTES
-app.use("/api/v1", productionRoutes);
+app.use("/api/v1", transactionEntriesRoutes);
 
 // Error Handler
 app.use(errorHandler);
