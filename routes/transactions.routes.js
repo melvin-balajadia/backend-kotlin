@@ -19,6 +19,9 @@ router.get(
   asyncHandler(getPaginatedTransactionEntries),
 );
 
-router.get("/transaction-entry/:id", asyncHandler(getTransactionEntryById));
+router.get(
+  "/transaction-entry/:transactionId",
+  asyncHandler(getTransactionEntryById),
+);
 
 export default router;

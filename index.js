@@ -9,6 +9,7 @@ import hpp from "hpp";
 import db from "./config/db.js";
 import logger from "./config/logger.js";
 import transactionEntriesRoutes from "./routes/transactions.routes.js";
+import huEntriesRoutes from "./routes/handlingUnit.routes.js";
 import errorHandler from "./middleware/errorHandler.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 
@@ -44,6 +45,7 @@ app.use(
 
 // ROUTES
 app.use("/api/v1", transactionEntriesRoutes);
+app.use("/api/v1", huEntriesRoutes);
 
 // Error Handler
 app.use(errorHandler);

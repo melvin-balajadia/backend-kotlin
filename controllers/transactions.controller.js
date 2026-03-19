@@ -1,6 +1,6 @@
 import db from "../config/db.js";
 
-/* Create production data */
+/* Create transaction */
 export const createTransactionEntries = async (req, res) => {
   const {
     transaction_idn,
