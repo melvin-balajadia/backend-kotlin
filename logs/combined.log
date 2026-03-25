@@ -544,3 +544,52 @@
 {"level":"info","message":"\u001b[0mGET /api/v1/paginated-items-entry?page=1&limit=5 \u001b[32m200\u001b[0m 9.289 ms - 498\u001b[0m","timestamp":"2026-03-23T08:44:53.750Z"}
 {"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-23T08:56:13.790Z"}
 {"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-23T08:56:13.796Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-24T07:41:18.815Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-24T07:41:18.824Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:24:51.076Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:24:51.082Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry \u001b[32m200\u001b[0m 80.390 ms - 457\u001b[0m","timestamp":"2026-03-25T02:25:00.471Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:26:14.626Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:26:14.631Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:26:29.389Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:26:29.396Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:26:39.706Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:26:39.712Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:26:43.905Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:26:43.910Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:26:47.157Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:26:47.163Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 13.002 ms - 457\u001b[0m","timestamp":"2026-03-25T02:26:55.069Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/1 \u001b[32m200\u001b[0m 3.447 ms - 457\u001b[0m","timestamp":"2026-03-25T02:27:24.714Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 1.553 ms - 457\u001b[0m","timestamp":"2026-03-25T02:27:34.013Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:27:49.792Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:27:49.797Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 21.254 ms - 234\u001b[0m","timestamp":"2026-03-25T02:27:52.592Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:28:08.454Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:28:08.468Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 18.377 ms - 235\u001b[0m","timestamp":"2026-03-25T02:28:09.822Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/hu-entry/2 \u001b[32m200\u001b[0m 13.617 ms - 293\u001b[0m","timestamp":"2026-03-25T02:28:52.420Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 4.806 ms - 235\u001b[0m","timestamp":"2026-03-25T02:29:18.239Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:29:58.731Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:29:58.735Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:30:06.961Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:30:06.965Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:30:17.995Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:30:18.000Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:30:27.663Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:30:27.670Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 16.678 ms - 659\u001b[0m","timestamp":"2026-03-25T02:30:30.460Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:02.131Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:02.136Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:09.855Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:09.860Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:13.199Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:13.207Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 10.597 ms - 659\u001b[0m","timestamp":"2026-03-25T02:31:13.993Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 1.595 ms - 659\u001b[0m","timestamp":"2026-03-25T02:31:19.264Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:26.706Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:26.713Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 24.732 ms - 235\u001b[0m","timestamp":"2026-03-25T02:31:27.374Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:45.450Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:45.455Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 7.088 ms - 659\u001b[0m","timestamp":"2026-03-25T02:31:47.959Z"}

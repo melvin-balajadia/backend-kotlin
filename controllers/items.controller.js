@@ -19,6 +19,7 @@ export const bulkUpsertItems = async (req, res) => {
     const cleanItems = items.map((item) => ({
       items_id: item.items_id ?? null,
       items_batch_code: item.items_batch_code ?? null,
+      items_production_code: item.items_production_code ?? null, // ✅ added
       items_pd: item.items_pd ?? null,
       items_cu: item.items_cu ?? null,
       items_weight: item.items_weight ?? null,
@@ -42,7 +43,7 @@ export const bulkUpsertItems = async (req, res) => {
         [hu_id, ...existingIds],
       );
     } else {
-      // If frontend sends empty → delete all
+      // If frontend sends empty → deactivate all
       await conn.query(
         `UPDATE items_entry
          SET items_status = 1
@@ -51,27 +52,31 @@ export const bulkUpsertItems = async (req, res) => {
       );
     }
 
-    // 4. Update existing items
+    // 4. Update existing items (UPSERT)
     if (existingItems.length > 0) {
       const values = existingItems.map((item) => [
         item.items_id,
         hu_id,
         item.items_batch_code,
+        item.items_production_code, // ✅ added
         item.items_pd,
         item.items_cu,
         item.items_weight,
         0,
       ]);
 
-      const placeholders = values.map(() => "(?, ?, ?, ?, ?, ?, ?)").join(", ");
+      const placeholders = values
+        .map(() => "(?, ?, ?, ?, ?, ?, ?, ?)")
+        .join(", ");
 
       await conn.query(
         `
         INSERT INTO items_entry
-        (items_id, items_hu_id, items_batch_code, items_pd, items_cu, items_weight, items_status)
+        (items_id, items_hu_id, items_batch_code, items_production_code, items_pd, items_cu, items_weight, items_status)
         VALUES ${placeholders}
         ON DUPLICATE KEY UPDATE
           items_batch_code = VALUES(items_batch_code),
+          items_production_code = VALUES(items_production_code),
           items_pd = VALUES(items_pd),
           items_cu = VALUES(items_cu),
           items_weight = VALUES(items_weight),
@@ -87,18 +92,19 @@ export const bulkUpsertItems = async (req, res) => {
       const values = newItems.map((item) => [
         hu_id,
         item.items_batch_code,
+        item.items_production_code, // ✅ added
         item.items_pd,
         item.items_cu,
         item.items_weight,
         0,
       ]);
 
-      const placeholders = values.map(() => "(?, ?, ?, ?, ?, ?)").join(", ");
+      const placeholders = values.map(() => "(?, ?, ?, ?, ?, ?, ?)").join(", ");
 
       await conn.query(
         `
         INSERT INTO items_entry
-        (items_hu_id, items_batch_code, items_pd, items_cu, items_weight, items_status)
+        (items_hu_id, items_batch_code, items_production_code, items_pd, items_cu, items_weight, items_status)
         VALUES ${placeholders}
         `,
         values.flat(),
@@ -158,4 +164,45 @@ export const getPaginatedItemEntries = async (req, res) => {
     totalPages: Math.ceil(total / limit),
     data: rows,
   });
+};
+
+/* Get all data */
+export const getItemEntries = async (req, res) => {
+  const [rows] = await db.query(
+    "SELECT * FROM items_entry WHERE items_status = 0 ORDER BY items_id DESC",
+  );
+
+  res.json({
+    success: true,
+    count: rows.length,
+    data: rows,
+  });
+};
+
+export const getItemsEntryById = async (req, res) => {
+  const { itemsId } = req.params;
+
+  try {
+    const [rows] = await db.query(
+      "SELECT * FROM items_entry WHERE items_hu_id = ?",
+      [itemsId],
+    );
+
+    if (!rows.length) {
+      return res.status(404).json({
+        success: false,
+        message: "No HU found for this transaction",
+      });
+    }
+
+    res.json({
+      success: true,
+      data: rows,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
 };
