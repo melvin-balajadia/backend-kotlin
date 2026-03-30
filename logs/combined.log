@@ -593,3 +593,535 @@
 {"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:31:45.450Z"}
 {"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:31:45.455Z"}
 {"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 7.088 ms - 659\u001b[0m","timestamp":"2026-03-25T02:31:47.959Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-25T02:42:12.222Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-25T02:42:12.226Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 15.574 ms - 659\u001b[0m","timestamp":"2026-03-25T02:43:37.079Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[32m200\u001b[0m 4.594 ms - 746\u001b[0m","timestamp":"2026-03-25T02:44:22.814Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T00:14:38.852Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T00:14:38.856Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T00:54:56.905Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T00:54:56.909Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[33m404\u001b[0m 20.067 ms - 62\u001b[0m","timestamp":"2026-03-26T00:59:59.662Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T01:00:31.412Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T01:00:31.416Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/items-entry/2 \u001b[33m404\u001b[0m 7.403 ms - 62\u001b[0m","timestamp":"2026-03-26T01:00:35.672Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:20:53.904Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:20:53.908Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:28:22.145Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:28:22.149Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:31:46.689Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:31:46.693Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:31:48.482Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:31:48.488Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:31:55.353Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:31:55.358Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:32:28.427Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:32:28.432Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:32:29.239Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:32:29.243Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:45:06.040Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:45:06.044Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:50:58.651Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:50:58.655Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T02:53:43.490Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T02:53:43.494Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T03:00:31.104Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T03:00:31.109Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T03:14:33.633Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T03:14:33.637Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T03:14:35.129Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T03:14:35.134Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T03:15:35.053Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T03:15:35.061Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-26T03:17:56.512Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-26T03:17:56.517Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-27T02:10:48.724Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-27T02:10:48.730Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 44.511 ms - -\u001b[0m","timestamp":"2026-03-27T02:11:13.139Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.198 ms - -\u001b[0m","timestamp":"2026-03-27T02:11:13.142Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.454 ms - -\u001b[0m","timestamp":"2026-03-27T02:12:56.024Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.485 ms - -\u001b[0m","timestamp":"2026-03-27T02:12:56.028Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.779 ms - -\u001b[0m","timestamp":"2026-03-27T02:13:31.736Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.788 ms - -\u001b[0m","timestamp":"2026-03-27T02:13:31.741Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.414 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:34.067Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.428 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:34.070Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.938 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:40.073Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.606 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:40.082Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.368 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:42.012Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.483 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:42.018Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.556 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:42.716Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 5.498 ms - -\u001b[0m","timestamp":"2026-03-27T02:15:42.725Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.512 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:00.829Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.571 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:00.833Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.911 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:06.966Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.564 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:06.974Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.448 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:07.767Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.903 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:07.774Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.046 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:08.617Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 4.032 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:08.627Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.635 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:10.234Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.982 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:10.242Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.640 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:10.927Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.121 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:10.929Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.113 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:11.678Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.244 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:11.685Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.281 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:26.034Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.253 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:26.039Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.630 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:26.846Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.036 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:26.853Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.642 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:28.112Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.019 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:28.117Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.166 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:32.915Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.846 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:32.921Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.307 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:36.461Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.362 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:36.466Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.331 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:40.799Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 5.499 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:40.809Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.164 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:42.429Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.682 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:42.436Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.438 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:43.036Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 4.930 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:43.051Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.954 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:54.563Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.718 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:54.572Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.716 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:55.415Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 4.089 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:55.422Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.706 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:56.259Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.079 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:56.264Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.867 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:57.179Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.031 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:57.184Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.177 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:58.161Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.305 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:58.168Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.570 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:59.632Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 4.290 ms - -\u001b[0m","timestamp":"2026-03-27T02:20:59.640Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.096 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:03.607Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.216 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:03.610Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 5.376 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:05.519Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.577 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:05.523Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.563 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:06.364Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.948 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:06.372Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.402 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:22.445Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.164 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:22.452Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.853 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:23.930Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.698 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:23.938Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.302 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:24.575Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.828 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:24.580Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.613 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:26.131Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.709 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:26.139Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.982 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:27.377Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.817 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:27.384Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.571 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:28.419Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.885 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:28.424Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.288 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:29.723Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.801 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:29.728Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.527 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:30.826Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.411 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:30.829Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.989 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:31.730Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.655 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:31.737Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.857 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:34.158Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.788 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:34.161Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.812 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:35.375Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.979 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:35.379Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.900 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:36.142Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.435 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:36.146Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.746 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:43.381Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.561 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:43.387Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.520 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:44.292Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.119 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:44.295Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.021 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:45.096Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.770 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:45.103Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.701 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:45.889Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.166 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:45.892Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.510 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:46.720Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.111 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:46.726Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.579 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:47.608Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 2.051 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:47.613Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 1.908 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:48.646Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/transaction-entry \u001b[36m304\u001b[0m 3.318 ms - -\u001b[0m","timestamp":"2026-03-27T02:21:48.653Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-27T02:52:56.031Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-27T02:52:56.034Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 1.990 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:37.958Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.822 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:41.762Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.815 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:41.765Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.875 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:45.124Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.933 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:45.675Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.706 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:46.027Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.625 ms - 162\u001b[0m","timestamp":"2026-03-27T02:55:46.195Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/api/transactions?page=1&per_page=10 \u001b[33m404\u001b[0m 0.231 ms - 162\u001b[0m","timestamp":"2026-03-27T02:56:23.913Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 23.084 ms - 840\u001b[0m","timestamp":"2026-03-27T02:56:48.546Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.548 ms - -\u001b[0m","timestamp":"2026-03-27T02:56:51.835Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 5.856 ms - -\u001b[0m","timestamp":"2026-03-27T02:56:51.845Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=asc \u001b[32m200\u001b[0m 5.610 ms - 840\u001b[0m","timestamp":"2026-03-27T02:56:56.420Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=desc \u001b[32m200\u001b[0m 3.820 ms - 840\u001b[0m","timestamp":"2026-03-27T02:56:57.223Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 3.120 ms - 840\u001b[0m","timestamp":"2026-03-27T02:56:58.546Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[32m200\u001b[0m 4.059 ms - 840\u001b[0m","timestamp":"2026-03-27T02:56:59.250Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 2.614 ms - -\u001b[0m","timestamp":"2026-03-27T02:56:59.958Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 3.497 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:01.269Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 3.059 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:02.584Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.717 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:03.261Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 3.126 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:04.255Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.007 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:06.647Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.786 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:06.652Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=idn \u001b[32m200\u001b[0m 10.691 ms - 456\u001b[0m","timestamp":"2026-03-27T02:57:09.405Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.814 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:11.769Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 4.099 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:18.329Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.661 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:20.621Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.885 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:22.692Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.183 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:22.697Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25 \u001b[32m200\u001b[0m 3.186 ms - 840\u001b[0m","timestamp":"2026-03-27T02:57:25.433Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.058 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:26.483Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.326 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:33.981Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 4.239 ms - -\u001b[0m","timestamp":"2026-03-27T02:57:33.986Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 3.840 ms - -\u001b[0m","timestamp":"2026-03-27T03:36:29.476Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 2.575 ms - -\u001b[0m","timestamp":"2026-03-27T03:36:29.481Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 6.692 ms - -\u001b[0m","timestamp":"2026-03-27T03:37:44.462Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.263 ms - -\u001b[0m","timestamp":"2026-03-27T03:37:44.474Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 26.835 ms - -\u001b[0m","timestamp":"2026-03-27T04:00:46.090Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 171.521 ms - -\u001b[0m","timestamp":"2026-03-27T04:00:46.293Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 15.811 ms - -\u001b[0m","timestamp":"2026-03-27T04:00:48.157Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.999 ms - -\u001b[0m","timestamp":"2026-03-27T04:00:59.237Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.284 ms - -\u001b[0m","timestamp":"2026-03-27T04:00:59.786Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 9.923 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:00.190Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.307 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:00.395Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 13.624 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:00.587Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 13.935 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:00.809Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.979 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:25.842Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.915 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:25.858Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-27T04:01:45.939Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-27T04:01:45.962Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 44.271 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:46.460Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 18.146 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:46.491Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 77.574 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:54.606Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 36.713 ms - -\u001b[0m","timestamp":"2026-03-27T04:01:54.678Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 11.820 ms - -\u001b[0m","timestamp":"2026-03-27T04:03:12.763Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.051 ms - -\u001b[0m","timestamp":"2026-03-27T04:03:12.778Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 14.151 ms - -\u001b[0m","timestamp":"2026-03-27T04:03:26.051Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 14.142 ms - -\u001b[0m","timestamp":"2026-03-27T04:03:26.071Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.205 ms - -\u001b[0m","timestamp":"2026-03-27T04:03:32.734Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&limit=5 \u001b[32m200\u001b[0m 8.985 ms - -\u001b[0m","timestamp":"2026-03-27T04:04:23.309Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&limit=10 \u001b[32m200\u001b[0m 9.024 ms - -\u001b[0m","timestamp":"2026-03-27T04:04:34.570Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 20.037 ms - -\u001b[0m","timestamp":"2026-03-27T04:05:16.181Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 6.055 ms - -\u001b[0m","timestamp":"2026-03-27T04:05:41.896Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.327 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:07.990Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=5714&per_page=10 \u001b[32m200\u001b[0m 66.035 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:12.784Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=5716&per_page=10 \u001b[32m200\u001b[0m 74.195 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:14.340Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 6.223 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:20.397Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 9.363 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:24.946Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.725 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:24.959Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=5813&per_page=10 \u001b[32m200\u001b[0m 53.508 ms - -\u001b[0m","timestamp":"2026-03-27T04:08:57.780Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6030&per_page=10 \u001b[32m200\u001b[0m 84.916 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:00.835Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6048&per_page=10 \u001b[32m200\u001b[0m 80.428 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:01.846Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6054&per_page=10 \u001b[32m200\u001b[0m 75.887 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:02.824Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6060&per_page=10 \u001b[32m200\u001b[0m 54.509 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:03.640Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6065&per_page=10 \u001b[32m200\u001b[0m 61.768 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:03.959Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6066&per_page=10 \u001b[32m200\u001b[0m 90.406 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:04.191Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6068&per_page=10 \u001b[32m200\u001b[0m 91.133 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:04.368Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6069&per_page=10 \u001b[32m200\u001b[0m 104.644 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:04.558Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6070&per_page=10 \u001b[32m200\u001b[0m 114.342 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:04.745Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6071&per_page=10 \u001b[32m200\u001b[0m 99.632 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:04.923Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6072&per_page=10 \u001b[32m200\u001b[0m 113.936 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:05.378Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6074&per_page=10 \u001b[32m200\u001b[0m 88.047 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:05.641Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6075&per_page=10 \u001b[32m200\u001b[0m 132.892 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:05.899Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6077&per_page=10 \u001b[32m200\u001b[0m 118.801 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:06.160Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6078&per_page=10 \u001b[32m200\u001b[0m 98.310 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:06.352Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6079&per_page=10 \u001b[32m200\u001b[0m 118.950 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:06.546Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6080&per_page=10 \u001b[32m200\u001b[0m 103.082 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:06.727Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6080&per_page=10&search=IDN \u001b[32m200\u001b[0m 105.493 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:25.720Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN \u001b[32m200\u001b[0m 49.034 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:25.723Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN1+ \u001b[32m200\u001b[0m 143.300 ms - 75\u001b[0m","timestamp":"2026-03-27T04:09:31.565Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN1 \u001b[32m200\u001b[0m 109.737 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:32.735Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN1000 \u001b[32m200\u001b[0m 127.798 ms - -\u001b[0m","timestamp":"2026-03-27T04:09:54.997Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN10000 \u001b[32m200\u001b[0m 141.793 ms - 461\u001b[0m","timestamp":"2026-03-27T04:09:58.269Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN1000 \u001b[36m304\u001b[0m 112.072 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:08.716Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN10000 \u001b[36m304\u001b[0m 147.169 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:14.695Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN10000+type \u001b[32m200\u001b[0m 152.035 ms - 75\u001b[0m","timestamp":"2026-03-27T04:10:24.601Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=type+a \u001b[32m200\u001b[0m 152.402 ms - 75\u001b[0m","timestamp":"2026-03-27T04:10:27.495Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=type \u001b[32m200\u001b[0m 55.954 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:29.565Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=typeA \u001b[32m200\u001b[0m 47.216 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:30.086Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=typeA&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 204.980 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:34.838Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 14.761 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:38.699Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 17.533 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:38.727Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 108.951 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:40.095Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.833 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:47.996Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.145 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:48.008Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.111 ms - -\u001b[0m","timestamp":"2026-03-27T04:10:49.185Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.612 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:05.153Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.513 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:05.743Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.454 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:06.530Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.136 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:07.209Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.088 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:07.853Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.137 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:08.599Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.640 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:08.799Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 6.677 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:08.996Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.044 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:09.181Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.521 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:09.381Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 11.076 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:09.539Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.281 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:09.727Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.286 ms - -\u001b[0m","timestamp":"2026-03-27T04:11:12.272Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&transaction_idn=IDN68087&transaction_client=Client+ \u001b[32m200\u001b[0m 98.099 ms - 461\u001b[0m","timestamp":"2026-03-27T04:11:54.412Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&transaction_idn=IDN68087&transaction_client=Client+ \u001b[36m304\u001b[0m 97.064 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:15.522Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&transaction_idn=IDN68087&transaction_client=Client+ \u001b[36m304\u001b[0m 87.755 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:16.616Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&transaction_idn=IDN68087&transaction_client=Client+ \u001b[36m304\u001b[0m 99.089 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:16.801Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 10.258 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:19.320Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.737 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:19.330Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.602 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:21.152Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.081 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:22.214Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.345 ms - -\u001b[0m","timestamp":"2026-03-27T04:12:22.357Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 13.446 ms - -\u001b[0m","timestamp":"2026-03-27T04:14:04.651Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 7.377 ms - -\u001b[0m","timestamp":"2026-03-27T04:15:50.373Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.516 ms - -\u001b[0m","timestamp":"2026-03-27T04:17:07.220Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 8.235 ms - -\u001b[0m","timestamp":"2026-03-27T04:17:07.231Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[32m200\u001b[0m 181.553 ms - 461\u001b[0m","timestamp":"2026-03-27T04:17:14.286Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[36m304\u001b[0m 602.522 ms - -\u001b[0m","timestamp":"2026-03-27T04:18:03.709Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[36m304\u001b[0m 520.948 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:13.695Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[36m304\u001b[0m 241.658 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:21.304Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[36m304\u001b[0m 149.887 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:31.981Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN86232 \u001b[36m304\u001b[0m 170.280 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:33.816Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 12.324 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:35.607Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.731 ms - -\u001b[0m","timestamp":"2026-03-27T04:26:36.362Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.646 ms - -\u001b[0m","timestamp":"2026-03-27T04:28:43.146Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.014 ms - -\u001b[0m","timestamp":"2026-03-27T04:29:18.995Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.526 ms - -\u001b[0m","timestamp":"2026-03-27T04:29:19.005Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[32m200\u001b[0m 10.653 ms - -\u001b[0m","timestamp":"2026-03-27T04:29:21.976Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.952 ms - -\u001b[0m","timestamp":"2026-03-27T04:29:23.938Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[36m304\u001b[0m 6.830 ms - -\u001b[0m","timestamp":"2026-03-27T04:30:29.544Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=3&per_page=10 \u001b[32m200\u001b[0m 10.613 ms - -\u001b[0m","timestamp":"2026-03-27T04:30:30.366Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=9149&per_page=10 \u001b[32m200\u001b[0m 62.780 ms - -\u001b[0m","timestamp":"2026-03-27T04:30:31.127Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 19.050 ms - -\u001b[0m","timestamp":"2026-03-27T04:30:48.582Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 15.149 ms - -\u001b[0m","timestamp":"2026-03-27T04:30:48.600Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.989 ms - -\u001b[0m","timestamp":"2026-03-27T04:31:01.363Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.573 ms - -\u001b[0m","timestamp":"2026-03-27T04:31:01.374Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.705 ms - -\u001b[0m","timestamp":"2026-03-27T04:31:09.872Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.086 ms - -\u001b[0m","timestamp":"2026-03-27T04:31:09.887Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 14.086 ms - -\u001b[0m","timestamp":"2026-03-27T04:31:23.685Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.400 ms - -\u001b[0m","timestamp":"2026-03-27T04:33:18.758Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.558 ms - -\u001b[0m","timestamp":"2026-03-27T04:33:18.770Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.761 ms - -\u001b[0m","timestamp":"2026-03-27T04:33:37.150Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.745 ms - -\u001b[0m","timestamp":"2026-03-27T04:33:37.162Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25 \u001b[32m200\u001b[0m 8.185 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:24.274Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=50 \u001b[32m200\u001b[0m 10.737 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:28.550Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=50 \u001b[36m304\u001b[0m 9.425 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:32.289Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.325 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:36.996Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.385 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:39.489Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.757 ms - -\u001b[0m","timestamp":"2026-03-27T04:37:39.502Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.417 ms - -\u001b[0m","timestamp":"2026-03-27T04:44:56.017Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.928 ms - -\u001b[0m","timestamp":"2026-03-27T04:44:56.028Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.154 ms - -\u001b[0m","timestamp":"2026-03-27T04:45:03.349Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.341 ms - -\u001b[0m","timestamp":"2026-03-27T04:45:03.358Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.713 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:22.009Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.983 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:22.022Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.909 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:24.427Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.840 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:24.443Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 19.371 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:33.313Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.546 ms - -\u001b[0m","timestamp":"2026-03-27T04:59:33.327Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.709 ms - -\u001b[0m","timestamp":"2026-03-27T05:00:13.499Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.793 ms - -\u001b[0m","timestamp":"2026-03-27T05:00:13.513Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.332 ms - -\u001b[0m","timestamp":"2026-03-27T05:00:57.423Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.275 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:00.504Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.638 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:00.518Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=9149&per_page=10 \u001b[36m304\u001b[0m 56.793 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:09.422Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=9148&per_page=10 \u001b[32m200\u001b[0m 52.324 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:10.526Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=9148&per_page=10 \u001b[36m304\u001b[0m 63.600 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:14.486Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 19.349 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:16.740Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.167 ms - -\u001b[0m","timestamp":"2026-03-27T05:01:16.755Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[36m304\u001b[0m 8.562 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:31.082Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=3&per_page=10 \u001b[36m304\u001b[0m 11.764 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:32.081Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=4&per_page=10 \u001b[32m200\u001b[0m 10.576 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:32.859Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=4&per_page=10&search=IDN91458 \u001b[32m200\u001b[0m 236.409 ms - 75\u001b[0m","timestamp":"2026-03-27T05:03:44.407Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN91458 \u001b[32m200\u001b[0m 224.169 ms - 461\u001b[0m","timestamp":"2026-03-27T05:03:44.433Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN9145 \u001b[32m200\u001b[0m 89.628 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:46.582Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 75.847 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:50.761Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 97.001 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:52.731Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=3&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 77.475 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:53.847Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=4&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 65.749 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:54.428Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=5&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 80.040 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:55.093Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=6&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 74.550 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:55.674Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=7&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 68.895 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:55.936Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=8&per_page=10&search=IDN914 \u001b[32m200\u001b[0m 88.001 ms - -\u001b[0m","timestamp":"2026-03-27T05:03:56.416Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN914 \u001b[32m200\u001b[0m 96.045 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:03.414Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=8&per_page=25&search=IDN914 \u001b[32m200\u001b[0m 188.235 ms - 77\u001b[0m","timestamp":"2026-03-27T05:04:03.467Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN914 \u001b[36m304\u001b[0m 73.718 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:12.091Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25 \u001b[36m304\u001b[0m 13.108 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:12.506Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.355 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:17.468Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 15.489 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:19.222Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.441 ms - -\u001b[0m","timestamp":"2026-03-27T05:04:19.237Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.568 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:12.353Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.732 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:15.152Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.201 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:15.164Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=IDN91488 \u001b[32m200\u001b[0m 157.766 ms - 461\u001b[0m","timestamp":"2026-03-27T05:08:25.888Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN91488 \u001b[32m200\u001b[0m 149.906 ms - 461\u001b[0m","timestamp":"2026-03-27T05:08:27.978Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN9148 \u001b[32m200\u001b[0m 178.384 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:32.531Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN914 \u001b[36m304\u001b[0m 67.377 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:37.934Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=4&per_page=25&search=IDN914 \u001b[32m200\u001b[0m 156.128 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:40.077Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=50&search=IDN914 \u001b[32m200\u001b[0m 96.759 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:45.478Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=4&per_page=50&search=IDN914 \u001b[32m200\u001b[0m 205.481 ms - 77\u001b[0m","timestamp":"2026-03-27T05:08:45.510Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN914 \u001b[36m304\u001b[0m 73.331 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:47.569Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=25&search=IDN914 \u001b[32m200\u001b[0m 84.788 ms - -\u001b[0m","timestamp":"2026-03-27T05:08:58.275Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=IDN914&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 178.805 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:00.771Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 81.342 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:06.839Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=awd&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 153.389 ms - 75\u001b[0m","timestamp":"2026-03-27T05:09:09.010Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 69.587 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:10.908Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=awd&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 160.498 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:12.171Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 64.708 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:12.782Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&search=awd&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 174.959 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:15.136Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 71.632 ms - -\u001b[0m","timestamp":"2026-03-27T05:09:18.958Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=25&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 62.133 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:18.690Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 87.025 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:27.216Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 16.326 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:31.589Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.511 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:31.605Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=1000 \u001b[32m200\u001b[0m 136.838 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:46.766Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=100 \u001b[32m200\u001b[0m 86.931 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:48.328Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.375 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:50.178Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 14.554 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:53.534Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.706 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:53.548Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.358 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:56.743Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.832 ms - -\u001b[0m","timestamp":"2026-03-27T05:10:56.753Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.272 ms - -\u001b[0m","timestamp":"2026-03-27T05:11:03.930Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.520 ms - -\u001b[0m","timestamp":"2026-03-27T05:11:03.940Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 19.159 ms - -\u001b[0m","timestamp":"2026-03-27T05:12:08.671Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.098 ms - -\u001b[0m","timestamp":"2026-03-27T05:12:08.684Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=9149&per_page=10 \u001b[36m304\u001b[0m 55.104 ms - -\u001b[0m","timestamp":"2026-03-27T05:12:10.883Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 16.337 ms - -\u001b[0m","timestamp":"2026-03-27T05:14:29.684Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.662 ms - -\u001b[0m","timestamp":"2026-03-27T05:14:29.697Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.459 ms - -\u001b[0m","timestamp":"2026-03-27T05:43:06.098Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.453 ms - -\u001b[0m","timestamp":"2026-03-27T05:43:06.108Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.826 ms - -\u001b[0m","timestamp":"2026-03-27T06:00:11.767Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.500 ms - -\u001b[0m","timestamp":"2026-03-27T06:00:11.785Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.255 ms - -\u001b[0m","timestamp":"2026-03-27T06:17:58.943Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 13.649 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:02.479Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.854 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:05.534Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.204 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:05.546Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.925 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:11.112Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.777 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:12.869Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.418 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:12.880Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.120 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:19.136Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.727 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:20.140Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 16.578 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:43.408Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.649 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:43.421Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 60.503 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:44.221Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 87.878 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:52.048Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 75.003 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:54.425Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[32m200\u001b[0m 60.423 ms - -\u001b[0m","timestamp":"2026-03-27T06:18:57.048Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 17.873 ms - -\u001b[0m","timestamp":"2026-03-27T06:19:17.021Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.010 ms - -\u001b[0m","timestamp":"2026-03-27T06:19:17.035Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.292 ms - -\u001b[0m","timestamp":"2026-03-27T06:20:55.249Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.321 ms - -\u001b[0m","timestamp":"2026-03-27T06:20:55.259Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=asc \u001b[32m200\u001b[0m 57.446 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:13.508Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=desc \u001b[32m200\u001b[0m 57.337 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:14.393Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.870 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:16.265Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.668 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:18.281Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.687 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:18.295Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 64.056 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:20.601Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[32m200\u001b[0m 67.089 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:21.406Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=asc \u001b[36m304\u001b[0m 65.677 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:31.355Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=desc \u001b[36m304\u001b[0m 63.453 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:33.386Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 63.515 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:36.302Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 67.349 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:44.800Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.169 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:46.839Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 69.910 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:47.427Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 77.049 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:47.728Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.581 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:48.593Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 61.011 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:49.765Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 63.466 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:50.633Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.154 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:51.964Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 88.015 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:53.372Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 62.434 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:55.016Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.386 ms - -\u001b[0m","timestamp":"2026-03-27T06:22:56.899Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 96.486 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:01.197Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 58.870 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:02.677Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.047 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:08.510Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=asc \u001b[32m200\u001b[0m 57.588 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:19.362Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=desc \u001b[32m200\u001b[0m 60.495 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:20.622Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.634 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:22.635Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=asc \u001b[36m304\u001b[0m 65.180 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:24.401Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_trucking_pn&sort_dir=desc \u001b[36m304\u001b[0m 75.005 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:25.378Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.695 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:26.475Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 17.744 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:31.600Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 11.015 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:31.614Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 58.083 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:32.887Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 66.128 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:33.624Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.461 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:34.506Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 58.172 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:34.895Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 78.022 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:35.303Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.934 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:35.430Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 61.269 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:35.721Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 62.418 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:36.283Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 6.966 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:36.689Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 69.884 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:37.341Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 59.094 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:38.047Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.079 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:38.623Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.439 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:40.631Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.071 ms - -\u001b[0m","timestamp":"2026-03-27T06:23:40.641Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.554 ms - -\u001b[0m","timestamp":"2026-03-27T06:57:42.965Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.298 ms - -\u001b[0m","timestamp":"2026-03-27T06:57:42.977Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 16.977 ms - -\u001b[0m","timestamp":"2026-03-27T07:00:43.239Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 42.907 ms - -\u001b[0m","timestamp":"2026-03-27T07:13:43.222Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.741 ms - -\u001b[0m","timestamp":"2026-03-27T07:13:47.950Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.477 ms - -\u001b[0m","timestamp":"2026-03-27T07:13:47.965Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.286 ms - -\u001b[0m","timestamp":"2026-03-27T07:14:45.284Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.872 ms - -\u001b[0m","timestamp":"2026-03-27T07:14:45.299Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.440 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:08.115Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.415 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:08.130Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.861 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:24.157Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 17.613 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:35.521Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.782 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:35.536Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=asc \u001b[36m304\u001b[0m 62.304 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:51.465Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=desc \u001b[36m304\u001b[0m 60.308 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:52.358Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.779 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:52.501Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=asc \u001b[36m304\u001b[0m 79.146 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:53.424Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_transaction_type&sort_dir=desc \u001b[36m304\u001b[0m 60.861 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:54.207Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.742 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:58.433Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.796 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:58.445Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=asc \u001b[36m304\u001b[0m 56.371 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:59.076Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&sort_by=transaction_idn&sort_dir=desc \u001b[36m304\u001b[0m 68.227 ms - -\u001b[0m","timestamp":"2026-03-27T07:15:59.842Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.344 ms - -\u001b[0m","timestamp":"2026-03-27T07:16:00.588Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 6.765 ms - -\u001b[0m","timestamp":"2026-03-27T07:16:02.532Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.113 ms - -\u001b[0m","timestamp":"2026-03-27T07:16:02.542Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[36m304\u001b[0m 8.914 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:07.229Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.230 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:08.553Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[36m304\u001b[0m 8.703 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:09.892Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.502 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:10.951Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.791 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:13.385Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.917 ms - -\u001b[0m","timestamp":"2026-03-27T07:43:13.395Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-27T07:55:20.830Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-27T07:55:20.844Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-30T02:25:27.929Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-30T02:25:27.937Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[32m200\u001b[0m 172.806 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:37.701Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 9.868 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:37.714Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 10.762 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:40.007Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.444 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:40.017Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[32m200\u001b[0m 7.930 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:45.573Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.429 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:46.680Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 18.744 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:48.704Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 15.261 ms - -\u001b[0m","timestamp":"2026-03-30T02:25:48.722Z"}
+{"level":"info","message":"✅ Database connected successfully","timestamp":"2026-03-30T02:35:36.696Z"}
+{"level":"info","message":"🚀 Server running on port 2009","timestamp":"2026-03-30T02:35:36.701Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 24.768 ms - -\u001b[0m","timestamp":"2026-03-30T02:51:54.931Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 7.772 ms - -\u001b[0m","timestamp":"2026-03-30T02:51:54.942Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 17.619 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:14.543Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 17.170 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:14.566Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=awd \u001b[32m200\u001b[0m 572.638 ms - 75\u001b[0m","timestamp":"2026-03-30T03:26:19.500Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 43.865 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:22.553Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10&search=awd \u001b[36m304\u001b[0m 680.913 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:22.756Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 23.511 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:24.325Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 21.666 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:26.759Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 24.911 ms - -\u001b[0m","timestamp":"2026-03-30T03:26:26.791Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 29.112 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:27.682Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 23.639 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:27.709Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=2&per_page=10 \u001b[36m304\u001b[0m 24.200 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:32.538Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 24.881 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:34.855Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 25.565 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:53.100Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 24.977 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:53.753Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 25.781 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:53.945Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 25.598 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:58.562Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 26.999 ms - -\u001b[0m","timestamp":"2026-03-30T03:59:58.594Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 25.867 ms - -\u001b[0m","timestamp":"2026-03-30T04:39:36.830Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 23.697 ms - -\u001b[0m","timestamp":"2026-03-30T04:39:36.860Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 19.061 ms - -\u001b[0m","timestamp":"2026-03-30T04:40:13.782Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 22.514 ms - -\u001b[0m","timestamp":"2026-03-30T04:40:13.807Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 30.638 ms - -\u001b[0m","timestamp":"2026-03-30T04:57:13.558Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 27.843 ms - -\u001b[0m","timestamp":"2026-03-30T04:57:13.589Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 24.909 ms - -\u001b[0m","timestamp":"2026-03-30T04:58:03.082Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 25.971 ms - -\u001b[0m","timestamp":"2026-03-30T04:58:03.112Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 12.343 ms - -\u001b[0m","timestamp":"2026-03-30T05:45:32.417Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/paginated-transaction-entry?page=1&per_page=10 \u001b[36m304\u001b[0m 8.228 ms - -\u001b[0m","timestamp":"2026-03-30T05:45:32.427Z"}
