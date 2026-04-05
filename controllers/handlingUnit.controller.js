@@ -2,8 +2,7 @@ import db from "../config/db.js";
 
 /* Create HU data */
 export const createHUEntries = async (req, res) => {
-  const { hu_transaction_id, hu_number } = req.body;
-
+  const { hu_transaction_id, hu_number, hu_palletnumber } = req.body;
   if (!hu_transaction_id || !hu_number) {
     return res.status(400).json({
       success: false,
@@ -13,11 +12,15 @@ export const createHUEntries = async (req, res) => {
 
   const sql = `
     INSERT INTO hu_entry
-    (hu_transaction_id, hu_number)
-    VALUES (?, ?)
+    (hu_transaction_id, hu_number, hu_palletnumber)
+    VALUES (?, ?, ?)
   `;
 
-  const [result] = await db.query(sql, [hu_transaction_id, hu_number]);
+  const [result] = await db.query(sql, [
+    hu_transaction_id,
+    hu_number,
+    hu_palletnumber,
+  ]);
 
   res.status(201).json({
     success: true,
@@ -26,6 +29,7 @@ export const createHUEntries = async (req, res) => {
       hu_id: result.insertId,
       hu_transaction_id,
       hu_number,
+      hu_palletnumber,
     },
   });
 };
@@ -87,4 +91,54 @@ export const getPaginatedHUEntries = async (req, res) => {
     totalPages: Math.ceil(total / limit),
     data: rows,
   });
+};
+
+/* Update item entry by ID */
+export const updateHUEntry = async (req, res) => {
+  const { huId } = req.params;
+  const fields = req.body;
+
+  try {
+    // Check if the HU exists
+    const [existing] = await db.query(
+      "SELECT * FROM hu_entry WHERE hu_id = ? AND hu_status = 0",
+      [huId],
+    );
+
+    console.log(existing);
+
+    if (!existing.length) {
+      return res.status(404).json({
+        success: false,
+        message: "No HU found for this transaction",
+      });
+    }
+
+    // Dynamically build SET clause from request body
+    const keys = Object.keys(fields);
+    if (!keys.length) {
+      return res.status(400).json({
+        success: false,
+        message: "No fields provided for update",
+      });
+    }
+
+    const setClause = keys.map((key) => `${key} = ?`).join(", ");
+    const values = [...Object.values(fields), huId];
+
+    await db.query(
+      `UPDATE hu_entry SET ${setClause} WHERE hu_id = ? AND hu_status = 0`,
+      values,
+    );
+
+    res.json({
+      success: true,
+      message: "HU entry updated successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
 };

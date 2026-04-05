@@ -8,6 +8,10 @@ export const createTransactionEntries = async (req, res) => {
     transaction_client,
     transaction_trucking_pn,
     transaction_date,
+    transaction_start_date,
+    transaction_end_date,
+    transaction_start_time,
+    transaction_end_time,
   } = req.body;
 
   if (
@@ -25,8 +29,8 @@ export const createTransactionEntries = async (req, res) => {
 
   const sql = `
     INSERT INTO transaction_entry
-    (transaction_idn, transaction_transaction_type, transaction_client, transaction_trucking_pn, transaction_date)
-    VALUES (?, ?, ?, ?, ?)
+    (transaction_idn, transaction_transaction_type, transaction_client, transaction_trucking_pn, transaction_date, transaction_start_date, transaction_end_date, transaction_start_time, transaction_end_time)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
   const [result] = await db.query(sql, [
@@ -35,6 +39,10 @@ export const createTransactionEntries = async (req, res) => {
     transaction_client,
     transaction_trucking_pn,
     transaction_date,
+    transaction_start_date,
+    transaction_end_date,
+    transaction_start_time,
+    transaction_end_time,
   ]);
 
   res.status(201).json({
@@ -47,7 +55,138 @@ export const createTransactionEntries = async (req, res) => {
       transaction_client,
       transaction_trucking_pn,
       transaction_date,
+      transaction_start_date,
+      transaction_end_date,
+      transaction_start_time,
+      transaction_end_time,
     },
+  });
+};
+
+/* Update transaction */
+export const updateTransactionEntries = async (req, res) => {
+  try {
+    const { transactionId } = req.params;
+    const {
+      transaction_idn,
+      transaction_transaction_type,
+      transaction_client,
+      transaction_trucking_pn,
+      transaction_date,
+      transaction_start_date,
+      transaction_end_date,
+      transaction_start_time,
+      transaction_end_time,
+      is_draft, // ← send true/false from frontend
+    } = req.body;
+
+    if (
+      !transaction_idn ||
+      !transaction_transaction_type ||
+      !transaction_client ||
+      !transaction_trucking_pn ||
+      !transaction_date
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
+
+    // 0 = Draft, 1 = Submitted for Approval
+    const transaction_status = is_draft ? 0 : 1;
+
+    const sql = `
+    UPDATE transaction_entry
+    SET
+      transaction_idn = ?,
+      transaction_transaction_type = ?,
+      transaction_client = ?,
+      transaction_trucking_pn = ?,
+      transaction_date = ?,
+      transaction_start_date = ?,
+      transaction_end_date = ?,
+      transaction_start_time = ?,
+      transaction_end_time = ?,
+      transaction_status = ?,
+      updated_at = CURRENT_TIMESTAMP
+    WHERE transaction_id = ?
+  `;
+
+    const [result] = await db.query(sql, [
+      transaction_idn,
+      transaction_transaction_type,
+      transaction_client,
+      transaction_trucking_pn,
+      transaction_date,
+      transaction_start_date,
+      transaction_end_date,
+      transaction_start_time,
+      transaction_end_time,
+      transaction_status,
+      transactionId,
+    ]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: is_draft ? "Saved as draft" : "Submitted for approval",
+      data: {
+        transaction_id: transactionId,
+        transaction_idn,
+        transaction_transaction_type,
+        transaction_client,
+        transaction_trucking_pn,
+        transaction_date,
+        transaction_start_date,
+        transaction_end_date,
+        transaction_start_time,
+        transaction_end_time,
+        transaction_status,
+      },
+    });
+  } catch (err) {
+    console.error("Update error:", err); // ← see the actual error
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+};
+
+/* Paginated data */
+export const getPaginatedTransactions = async (req, res) => {
+  let { page = 1, limit = 10 } = req.query;
+
+  page = Number(page);
+  limit = Number(limit);
+
+  const offset = (page - 1) * limit;
+
+  const [[{ total }]] = await db.query(
+    "SELECT COUNT(*) AS total FROM transaction_entry",
+  );
+
+  const [rows] = await db.query(
+    `SELECT * FROM transaction_entry
+     ORDER BY transaction_id DESC
+     LIMIT ? OFFSET ?`,
+    [limit, offset],
+  );
+
+  res.json({
+    success: true,
+    page,
+    limit,
+    totalRecords: total,
+    totalPages: Math.ceil(total / limit),
+    data: rows,
   });
 };
 
@@ -65,7 +204,6 @@ export const getTransactionEntries = async (req, res) => {
 };
 
 /* Paginated data */
-/* GET /api/transactions */
 export const getPaginatedTransactionEntries = async (req, res) => {
   let {
     page = 1,
