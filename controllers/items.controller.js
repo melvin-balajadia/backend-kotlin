@@ -15,8 +15,9 @@ export const bulkUpsertItems = async (req, res) => {
     // 1. Normalize
     const cleanItems = items.map((item) => ({
       items_id: item.items_id && item.items_id > 0 ? item.items_id : null,
+      items_item_code: item.items_item_code ?? null,
+      items_item_description: item.items_item_description ?? null,
       items_batch_code: item.items_batch_code ?? null,
-      items_production_code: item.items_production_code ?? null,
       items_pd: item.items_pd ?? null,
       items_cu: item.items_cu ?? null,
       items_weight: item.items_weight ?? null,
@@ -53,8 +54,9 @@ export const bulkUpsertItems = async (req, res) => {
       await conn.query(
         `UPDATE items_entry
          SET
+           items_item_code = ?,
+           items_item_description = ?,
            items_batch_code = ?,
-           items_production_code = ?,
            items_pd = ?,
            items_cu = ?,
            items_weight = ?,
@@ -63,8 +65,9 @@ export const bulkUpsertItems = async (req, res) => {
          WHERE items_id = ?
          AND items_hu_id = ?`,
         [
+          item.items_item_code,
+          item.items_item_description,
           item.items_batch_code,
-          item.items_production_code,
           item.items_pd,
           item.items_cu,
           item.items_weight,
@@ -77,17 +80,20 @@ export const bulkUpsertItems = async (req, res) => {
     if (newItems.length > 0) {
       const values = newItems.map((item) => [
         hu_id,
+        item.items_item_code,
+        item.items_item_description,
         item.items_batch_code,
-        item.items_production_code,
         item.items_pd,
         item.items_cu,
         item.items_weight,
         0,
       ]);
-      const placeholders = values.map(() => "(?, ?, ?, ?, ?, ?, ?)").join(", ");
+      const placeholders = values
+        .map(() => "(?, ?, ?, ?, ?, ?, ?, ?)")
+        .join(", ");
       await conn.query(
         `INSERT INTO items_entry
-         (items_hu_id, items_batch_code, items_production_code, items_pd, items_cu, items_weight, items_status)
+         (items_hu_id, items_item_code, items_item_description, items_batch_code, items_pd, items_cu, items_weight, items_status)
          VALUES ${placeholders}`,
         values.flat(),
       );
