@@ -2,8 +2,8 @@ import db from "../config/db.js";
 
 /* Create HU data */
 export const createHUEntries = async (req, res) => {
-  const { hu_transaction_id, hu_number, hu_palletnumber } = req.body;
-  if (!hu_transaction_id || !hu_number) {
+  const { hu_transaction_id, hu_number, hu_batch_code } = req.body;
+  if (!hu_transaction_id || !hu_number || !hu_batch_code) {
     return res.status(400).json({
       success: false,
       message: "All fields are required",
@@ -12,14 +12,14 @@ export const createHUEntries = async (req, res) => {
 
   const sql = `
     INSERT INTO hu_entry
-    (hu_transaction_id, hu_number, hu_palletnumber)
+    (hu_transaction_id, hu_number, hu_batch_code)
     VALUES (?, ?, ?)
   `;
 
   const [result] = await db.query(sql, [
     hu_transaction_id,
     hu_number,
-    hu_palletnumber,
+    hu_batch_code,
   ]);
 
   res.status(201).json({
@@ -29,7 +29,7 @@ export const createHUEntries = async (req, res) => {
       hu_id: result.insertId,
       hu_transaction_id,
       hu_number,
-      hu_palletnumber,
+      hu_batch_code,
     },
   });
 };
