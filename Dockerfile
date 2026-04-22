@@ -1,30 +1,37 @@
-# -----------------------------
-# 1. Base Image
-# -----------------------------
-FROM node:20-alpine
+# ─── Stage 1: Install Dependencies ───────────────────────────────────────────
+FROM node:20-alpine AS deps
 
-# -----------------------------
-# 2. Set working directory
-# -----------------------------
 WORKDIR /app
 
-# -----------------------------
-# 3. Install dependencies first (cache layers)
-# -----------------------------
 COPY package*.json ./
-RUN npm install --production
 
-# -----------------------------
-# 4. Copy app source
-# -----------------------------
+RUN npm ci --omit=dev
+
+# ─── Stage 2: Production Image ───────────────────────────────────────────────
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# ─── Non-root User ────────────────────────────────────────────────────────────
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+# ─── Copy Dependencies & Source ───────────────────────────────────────────────
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# -----------------------------
-# 5. Expose port
-# -----------------------------
-EXPOSE 2009
+# ─── Create Logs Directory ────────────────────────────────────────────────────
+# Winston writes to logs/error.log and logs/combined.log
+# This dir must exist before the app starts
+RUN mkdir -p logs && chown -R appuser:appgroup /app
 
-# -----------------------------
-# 6. Start the server
-# -----------------------------
+# ─── Notes ────────────────────────────────────────────────────────────────────
+# certificates/ is intentionally NOT copied —
+# bind-mounted at runtime via docker-compose so real certs
+# are never baked into the image
+
+# ─── Switch to Non-root User ──────────────────────────────────────────────────
+USER appuser
+
+EXPOSE 8088
+
 CMD ["node", "index.js"]

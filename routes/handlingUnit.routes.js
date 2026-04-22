@@ -1,5 +1,5 @@
 import express from "express";
-import asyncHandler from "../middleware/asyncHandler.js";
+import catchAsync from "../utils/catchAsync.js";
 
 import {
   createHUEntries,
@@ -10,12 +10,12 @@ import {
 
 const router = express.Router();
 
-router.get("/hu-entry/:id", asyncHandler(getHUByTransactionId));
+router.get("/hu-entry/:id", catchAsync(getHUByTransactionId));
 
-router.put("/hu-entry/:huId", asyncHandler(updateHUEntry));
+router.put("/hu-entry/:huId", catchAsync(updateHUEntry));
 
-router.get("/paginated-hu-entry", asyncHandler(getPaginatedHUEntries));
+router.get("/paginated-hu-entry", catchAsync(getPaginatedHUEntries));
 
-router.post("/hu-entry", asyncHandler(createHUEntries));
+router.post("/hu-entry", catchAsync(createHUEntries));
 
 export default router;

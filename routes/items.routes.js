@@ -1,5 +1,5 @@
 import express from "express";
-import asyncHandler from "../middleware/asyncHandler.js";
+import catchAsync from "../utils/catchAsync.js";
 
 import {
   bulkUpsertItems,
@@ -10,12 +10,12 @@ import {
 
 const router = express.Router();
 
-router.post("/items-entry", asyncHandler(bulkUpsertItems));
+router.post("/items-entry", catchAsync(bulkUpsertItems));
 
-router.get("/paginated-items-entry", asyncHandler(getPaginatedItemEntries));
+router.get("/paginated-items-entry", catchAsync(getPaginatedItemEntries));
 
-router.get("/items-entry", asyncHandler(getItemEntries));
+router.get("/items-entry", catchAsync(getItemEntries));
 
-router.get("/items-entry/:itemsId", asyncHandler(getItemsEntryById));
+router.get("/items-entry/:itemsId", catchAsync(getItemsEntryById));
 
 export default router;

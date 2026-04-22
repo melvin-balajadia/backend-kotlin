@@ -1,5 +1,5 @@
 import express from "express";
-import asyncHandler from "../middleware/asyncHandler.js";
+import catchAsync from "../utils/catchAsync.js";
 
 import {
   createTransactionEntries,
@@ -12,28 +12,28 @@ import {
 
 const router = express.Router();
 
-router.post("/transaction-entry", asyncHandler(createTransactionEntries));
+router.post("/transaction-entry", catchAsync(createTransactionEntries));
 
-router.get("/transaction-entry", asyncHandler(getTransactionEntries));
+router.get("/transaction-entry", catchAsync(getTransactionEntries));
 
 router.get(
   "/paginated-transaction-entry",
-  asyncHandler(getPaginatedTransactions),
+  catchAsync(getPaginatedTransactions),
 );
 
 router.get(
   "/paginated-transaction",
-  asyncHandler(getPaginatedTransactionEntries),
+  catchAsync(getPaginatedTransactionEntries),
 );
 
 router.get(
   "/transaction-entry/:transactionId",
-  asyncHandler(getTransactionEntryById),
+  catchAsync(getTransactionEntryById),
 );
 
 router.put(
   "/transaction-entry/:transactionId",
-  asyncHandler(updateTransactionEntries),
+  catchAsync(updateTransactionEntries),
 );
 
 export default router;
