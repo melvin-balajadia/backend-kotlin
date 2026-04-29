@@ -322,3 +322,56 @@ export const getTransactionEntryById = async (req, res) => {
     data: rows[0],
   });
 };
+
+export const getTransactionReport = async (req, res) => {
+  const { transactionId } = req.params;
+
+  try {
+    // 1. Get transaction details
+    const [[transaction]] = await db.query(
+      `SELECT * FROM transaction_entry WHERE transaction_id = ?`,
+      [transactionId],
+    );
+
+    if (!transaction) {
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    // 2. Get all active HUs for this transaction
+    const [hus] = await db.query(
+      `SELECT * FROM hu_entry
+       WHERE hu_transaction_id = ? AND hu_status = 0
+       ORDER BY hu_id ASC`,
+      [transactionId],
+    );
+
+    // 3. For each HU, get its active items
+    const husWithItems = await Promise.all(
+      hus.map(async (hu) => {
+        const [items] = await db.query(
+          `SELECT * FROM items_entry
+           WHERE items_hu_id = ? AND items_status = 0
+           ORDER BY items_id ASC`,
+          [hu.hu_id],
+        );
+        return { ...hu, items };
+      }),
+    );
+
+    return res.json({
+      success: true,
+      data: {
+        ...transaction,
+        hu_list: husWithItems,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

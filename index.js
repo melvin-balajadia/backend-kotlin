@@ -19,7 +19,10 @@ import credentials from "./middleware/credentials.js";
 import transactionEntriesRoutes from "./routes/transactions.routes.js";
 import huEntriesRoutes from "./routes/handlingUnit.routes.js";
 import itemEntriesRoutes from "./routes/items.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+
 import errorHandler from "./middleware/errorHandler.js";
+import verifyJWT from "./middleware/verifyJWT.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 import AppError from "./utils/appError.js"; // ← added
 
@@ -92,6 +95,8 @@ app.use(
 );
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
+app.use("/api/v1", authRoutes);
+app.use(verifyJWT);
 app.use("/api/v1", transactionEntriesRoutes);
 app.use("/api/v1", huEntriesRoutes);
 app.use("/api/v1", itemEntriesRoutes);

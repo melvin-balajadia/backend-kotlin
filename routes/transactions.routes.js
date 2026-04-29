@@ -8,6 +8,7 @@ import {
   getTransactionEntryById,
   getPaginatedTransactions,
   updateTransactionEntries,
+  getTransactionReport,
 } from "../controllers/transactions.controller.js";
 
 const router = express.Router();
@@ -34,6 +35,11 @@ router.get(
 router.put(
   "/transaction-entry/:transactionId",
   catchAsync(updateTransactionEntries),
+);
+
+router.get(
+  "/transaction-report/:transactionId",
+  catchAsync(getTransactionReport),
 );
 
 export default router;

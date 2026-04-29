@@ -2,6 +2,8 @@ import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 import logger from "./logger.js";
 
+dotenv.config();
+
 // ─── Pool Configuration ───────────────────────────────────────────────────────
 const poolConfig = {
   host: process.env.MYSQL_HOST,
