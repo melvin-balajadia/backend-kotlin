@@ -40,7 +40,7 @@ export const getHUByTransactionId = async (req, res) => {
 
   try {
     const [rows] = await db.query(
-      "SELECT * FROM hu_entry WHERE hu_transaction_id = ?",
+      "SELECT * FROM hu_entry WHERE hu_transaction_id = ? AND hu_status != 2",
       [id],
     );
 
@@ -98,47 +98,123 @@ export const updateHUEntry = async (req, res) => {
   const { huId } = req.params;
   const fields = req.body;
 
+  // Whitelist allowed columns — never trust raw req.body keys in a SET clause
+  const ALLOWED_FIELDS = [
+    "hu_number",
+    "hu_palletnumber",
+    "hu_batch_code",
+    "hu_description",
+  ];
+
   try {
-    // Check if the HU exists
     const [existing] = await db.query(
       "SELECT * FROM hu_entry WHERE hu_id = ? AND hu_status = 0",
       [huId],
     );
 
-    console.log(existing);
-
     if (!existing.length) {
       return res.status(404).json({
         success: false,
-        message: "No HU found for this transaction",
+        message: "No HU found",
       });
     }
 
-    // Dynamically build SET clause from request body
-    const keys = Object.keys(fields);
-    if (!keys.length) {
+    // Only keep fields that are explicitly allowed
+    const safeFields = Object.keys(fields).filter((k) =>
+      ALLOWED_FIELDS.includes(k),
+    );
+
+    if (!safeFields.length) {
       return res.status(400).json({
         success: false,
-        message: "No fields provided for update",
+        message: "No valid fields provided for update",
       });
     }
 
-    const setClause = keys.map((key) => `${key} = ?`).join(", ");
-    const values = [...Object.values(fields), huId];
+    const setClause = safeFields.map((k) => `${k} = ?`).join(", ");
+    const values = [...safeFields.map((k) => fields[k]), huId];
 
     await db.query(
-      `UPDATE hu_entry SET ${setClause} WHERE hu_id = ? AND hu_status = 0`,
+      `UPDATE hu_entry SET ${setClause}, updated_at = CURRENT_TIMESTAMP
+       WHERE hu_id = ? AND hu_status = 0`,
       values,
     );
 
-    res.json({
-      success: true,
-      message: "HU entry updated successfully",
-    });
+    res.json({ success: true, message: "HU updated successfully" });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * PATCH /hu/:huId/archive
+ * Soft-deletes a single HU + all items inside it.
+ * Does NOT touch the parent transaction.
+ */
+export const archiveHU = async (req, res) => {
+  const { huId } = req.params;
+  const conn = await db.getConnection();
+
+  try {
+    await conn.beginTransaction();
+
+    // 1. Verify HU exists
+    const [[hu]] = await conn.query(
+      `SELECT hu_id, hu_status FROM hu_entry WHERE hu_id = ?`,
+      [huId],
+    );
+
+    if (!hu) {
+      await conn.rollback();
+      return res.status(404).json({
+        success: false,
+        message: "HU not found",
+      });
+    }
+
+    if (hu.hu_status === 2) {
+      await conn.rollback();
+      return res.status(409).json({
+        success: false,
+        message: "HU is already archived",
+      });
+    }
+
+    // 2. Archive the HU
+    await conn.query(
+      `UPDATE hu_entry
+       SET hu_status = 2, updated_at = CURRENT_TIMESTAMP
+       WHERE hu_id = ?`,
+      [huId],
+    );
+
+    // 3. Archive all items under this HU
+    const [itemResult] = await conn.query(
+      `UPDATE items_entry
+       SET items_status = 2, updated_at = CURRENT_TIMESTAMP
+       WHERE items_hu_id = ?`,
+      [huId],
+    );
+
+    await conn.commit();
+
+    return res.status(200).json({
+      success: true,
+      message: "HU and its items archived successfully",
+      data: {
+        hu_id: Number(huId),
+        archived_items: itemResult.affectedRows,
+      },
     });
+  } catch (err) {
+    await conn.rollback();
+    console.error("archiveHU error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Archive failed",
+      error: err.message,
+    });
+  } finally {
+    conn.release();
   }
 };

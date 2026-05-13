@@ -1,4 +1,5 @@
 import db from "../config/db.js";
+import { paginate } from "../utils/paginate.js";
 
 /* Create transaction */
 export const createTransactionEntries = async (req, res) => {
@@ -170,13 +171,13 @@ export const getPaginatedTransactions = async (req, res) => {
   const offset = (page - 1) * limit;
 
   const [[{ total }]] = await db.query(
-    "SELECT COUNT(*) AS total FROM transaction_entry",
+    "SELECT COUNT(*) AS total FROM transaction_entry WHERE transaction_status != 2",
   );
-
   const [rows] = await db.query(
     `SELECT * FROM transaction_entry
-     ORDER BY transaction_id DESC
-     LIMIT ? OFFSET ?`,
+   WHERE transaction_status != 2
+   ORDER BY transaction_id DESC
+   LIMIT ? OFFSET ?`,
     [limit, offset],
   );
 
@@ -205,100 +206,63 @@ export const getTransactionEntries = async (req, res) => {
 
 /* Paginated data */
 export const getPaginatedTransactionEntries = async (req, res) => {
-  let {
-    page = 1,
-    per_page = 10,
-    search = "",
-    sort_by = "transaction_id",
-    sort_dir = "desc",
-    // column-level filters (must match your column keys)
-    transaction_idn,
-    transaction_transaction_type,
-    transaction_client,
-    transaction_trucking_pn,
-    transaction_date,
-  } = req.query;
+  try {
+    const result = await paginate({
+      query: req.query,
+      table: "transaction_entry",
+      db,
+      baseCondition: "transaction_status != 2",
+      searchColumns: [
+        "transaction_idn",
+        "transaction_transaction_type",
+        "transaction_client",
+        "transaction_trucking_pn",
+      ],
+      allowedSorts: [
+        "transaction_id",
+        "transaction_idn",
+        "transaction_transaction_type",
+        "transaction_client",
+        "transaction_trucking_pn",
+        "transaction_date",
+      ],
+      defaultSort: "transaction_id",
+      filters: (query, conditions, values) => {
+        const {
+          transaction_idn,
+          transaction_transaction_type,
+          transaction_client,
+          transaction_trucking_pn,
+          transaction_date,
+        } = query;
 
-  page = Number(page);
-  per_page = Number(per_page);
-  const offset = (page - 1) * per_page;
+        if (transaction_idn) {
+          conditions.push("transaction_idn LIKE ?");
+          values.push(`%${transaction_idn}%`);
+        }
+        if (transaction_transaction_type) {
+          conditions.push("transaction_transaction_type LIKE ?");
+          values.push(`%${transaction_transaction_type}%`);
+        }
+        if (transaction_client) {
+          conditions.push("transaction_client LIKE ?");
+          values.push(`%${transaction_client}%`);
+        }
+        if (transaction_trucking_pn) {
+          conditions.push("transaction_trucking_pn LIKE ?");
+          values.push(`%${transaction_trucking_pn}%`);
+        }
+        if (transaction_date) {
+          conditions.push("DATE(transaction_date) = ?");
+          values.push(transaction_date);
+        }
+      },
+    });
 
-  // ── Whitelist sortable columns to prevent SQL injection ──────────────────
-  const allowedSortColumns = [
-    "transaction_id",
-    "transaction_idn",
-    "transaction_transaction_type",
-    "transaction_client",
-    "transaction_trucking_pn",
-    "transaction_date",
-  ];
-  if (!allowedSortColumns.includes(sort_by)) sort_by = "transaction_id";
-  if (!["asc", "desc"].includes(sort_dir.toLowerCase())) sort_dir = "desc";
-
-  // ── Build WHERE clause ───────────────────────────────────────────────────
-  const conditions = [];
-  const values = [];
-
-  if (search) {
-    conditions.push(`(
-      transaction_idn              LIKE ? OR
-      transaction_transaction_type LIKE ? OR
-      transaction_client           LIKE ? OR
-      transaction_trucking_pn      LIKE ?
-    )`);
-    const like = `%${search}%`;
-    values.push(like, like, like, like);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
   }
-
-  // Column-level filters
-  if (transaction_idn) {
-    conditions.push("transaction_idn LIKE ?");
-    values.push(`%${transaction_idn}%`);
-  }
-  if (transaction_transaction_type) {
-    conditions.push("transaction_transaction_type LIKE ?");
-    values.push(`%${transaction_transaction_type}%`);
-  }
-  if (transaction_client) {
-    conditions.push("transaction_client LIKE ?");
-    values.push(`%${transaction_client}%`);
-  }
-  if (transaction_trucking_pn) {
-    conditions.push("transaction_trucking_pn LIKE ?");
-    values.push(`%${transaction_trucking_pn}%`);
-  }
-  if (transaction_date) {
-    conditions.push("DATE(transaction_date) = ?");
-    values.push(transaction_date);
-  }
-
-  const where = conditions.length ? `WHERE ${conditions.join(" AND ")}` : "";
-
-  // ── Count total matching rows ────────────────────────────────────────────
-  const [[{ total }]] = await db.query(
-    `SELECT COUNT(*) AS total FROM transaction_entry ${where}`,
-    values,
-  );
-
-  // ── Fetch paginated rows ─────────────────────────────────────────────────
-  const [rows] = await db.query(
-    `SELECT * FROM transaction_entry
-     ${where}
-     ORDER BY ${sort_by} ${sort_dir}
-     LIMIT ? OFFSET ?`,
-    [...values, per_page, offset],
-  );
-
-  // ── Respond in the shape your frontend expects ───────────────────────────
-  res.json({
-    data: rows,
-    meta: {
-      current_page: page,
-      per_page,
-      total,
-      last_page: Math.ceil(total / per_page),
-    },
-  });
 };
 
 /* Get single record */
@@ -373,5 +337,105 @@ export const getTransactionReport = async (req, res) => {
       success: false,
       message: error.message,
     });
+  }
+};
+
+/**
+ * PATCH /transactions/:transactionId/archive
+ * Soft-deletes a transaction + all its HUs + all items under those HUs.
+ * Entire operation is atomic — rolls back fully on any error.
+ */
+export const archiveTransaction = async (req, res) => {
+  const { transactionId } = req.params;
+  const conn = await db.getConnection();
+
+  try {
+    await conn.beginTransaction();
+
+    // 1. Verify transaction exists and is not already archived
+    const [[tx]] = await conn.query(
+      `SELECT transaction_id, transaction_status
+       FROM transaction_entry
+       WHERE transaction_id = ?`,
+      [transactionId],
+    );
+
+    if (!tx) {
+      await conn.rollback();
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    if (tx.transaction_status === 2) {
+      await conn.rollback();
+      return res.status(409).json({
+        success: false,
+        message: "Transaction is already archived",
+      });
+    }
+
+    // 2. Archive the transaction (status 2 = archived, keeps your 0/1 draft/submitted)
+    await conn.query(
+      `UPDATE transaction_entry
+       SET transaction_status = 2, updated_at = CURRENT_TIMESTAMP
+       WHERE transaction_id = ?`,
+      [transactionId],
+    );
+
+    // 3. Get all HU ids under this transaction (active or not — archive everything)
+    const [hus] = await conn.query(
+      `SELECT hu_id FROM hu_entry WHERE hu_transaction_id = ?`,
+      [transactionId],
+    );
+
+    let archivedHUs = 0;
+    let archivedItems = 0;
+
+    if (hus.length > 0) {
+      const huIds = hus.map((h) => h.hu_id);
+      const placeholders = huIds.map(() => "?").join(", ");
+
+      // 4. Archive all HUs under this transaction
+      const [huResult] = await conn.query(
+        `UPDATE hu_entry
+         SET hu_status = 2, updated_at = CURRENT_TIMESTAMP
+         WHERE hu_transaction_id = ?`,
+        [transactionId],
+      );
+      archivedHUs = huResult.affectedRows;
+
+      // 5. Archive all items under those HUs
+      const [itemResult] = await conn.query(
+        `UPDATE items_entry
+         SET items_status = 2, updated_at = CURRENT_TIMESTAMP
+         WHERE items_hu_id IN (${placeholders})`,
+        huIds,
+      );
+      archivedItems = itemResult.affectedRows;
+    }
+
+    await conn.commit();
+
+    return res.status(200).json({
+      success: true,
+      message: "Transaction archived successfully",
+      data: {
+        transaction_id: Number(transactionId),
+        archived_hus: archivedHUs,
+        archived_items: archivedItems,
+      },
+    });
+  } catch (err) {
+    await conn.rollback();
+    console.error("archiveTransaction error:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Archive failed",
+      error: err.message,
+    });
+  } finally {
+    conn.release();
   }
 };

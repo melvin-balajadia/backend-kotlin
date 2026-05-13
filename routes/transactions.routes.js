@@ -1,5 +1,6 @@
 import express from "express";
 import catchAsync from "../utils/catchAsync.js";
+import verifyJWT from "../middleware/verifyJWT.js";
 
 import {
   createTransactionEntries,
@@ -9,9 +10,12 @@ import {
   getPaginatedTransactions,
   updateTransactionEntries,
   getTransactionReport,
+  archiveTransaction,
 } from "../controllers/transactions.controller.js";
 
 const router = express.Router();
+
+router.use(verifyJWT);
 
 router.post("/transaction-entry", catchAsync(createTransactionEntries));
 
@@ -40,6 +44,11 @@ router.put(
 router.get(
   "/transaction-report/:transactionId",
   catchAsync(getTransactionReport),
+);
+
+router.patch(
+  "/transaction-report/:transactionId/archive",
+  catchAsync(archiveTransaction),
 );
 
 export default router;

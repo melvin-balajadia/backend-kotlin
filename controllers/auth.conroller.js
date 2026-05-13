@@ -37,8 +37,8 @@ const signRefreshToken = (username) =>
 const refreshCookieOptions = {
   httpOnly: true,
   maxAge: 24 * 60 * 60 * 1000, // 1 day in ms
-  sameSite: "None",
-  secure: true,
+  // sameSite: "None",
+  // secure: true,
 };
 
 // ─── Database Queries ────────────────────────────────────────────────────────
@@ -249,8 +249,8 @@ export const logoutFunction = async (req, res) => {
     // Always clear the cookie regardless of token validity
     res.clearCookie("jwt", {
       httpOnly: true,
-      sameSite: "None",
-      secure: true,
+      // sameSite: "None",
+      // secure: true,
     });
 
     if (!refreshToken) {
@@ -278,55 +278,62 @@ export const logoutFunction = async (req, res) => {
  */
 export const resetPassword = async (req, res) => {
   try {
-    const userId = req.params.id;
-    const { user_password: newPassword } = req.body;
+    const { user_name } = req.user; // from verifyJWT
+    const { current_password, new_password } = req.body;
 
-    // --- Input validation ---
-    if (!isNonEmpty(userId) || !isNonEmpty(newPassword)) {
+    // --- Validation ---
+    if (!isNonEmpty(current_password) || !isNonEmpty(new_password)) {
       return res.status(400).json({
         errorStatus: true,
-        message: "User ID and new password are required.",
+        message: "Current and new password are required.",
       });
     }
 
-    // Enforce minimum password strength
-    if (newPassword.length < 8) {
+    if (new_password.length < 8) {
       return res.status(400).json({
         errorStatus: true,
         message: "Password must be at least 8 characters.",
       });
     }
 
-    // --- Check expiration ---
-    const expirationDate = await getUserExpDate(userId);
-    if (!expirationDate) {
+    if (current_password === new_password) {
+      return res.status(400).json({
+        errorStatus: true,
+        message: "New password must differ from current password.",
+      });
+    }
+
+    // --- Fetch user by username from token ---
+    const user = await getUserByUsername(user_name);
+    if (!user) {
       return res.status(404).json({
         errorStatus: true,
         message: "User not found.",
       });
     }
 
-    const isExpired = new Date(expirationDate) < new Date();
-    if (isExpired) {
-      return res.status(410).json({
+    // --- Verify current password ---
+    const isMatch = await bcrypt.compare(current_password, user.user_password);
+    if (!isMatch) {
+      return res.status(401).json({
         errorStatus: true,
-        message: "Password reset link has expired.",
+        message: "Current password is incorrect.",
       });
     }
 
-    // --- Hash and save ---
-    const hashedPassword = await bcrypt.hash(newPassword, SALT_ROUNDS);
-    await updatePassword(userId, hashedPassword);
+    // --- Hash & save ---
+    const hashedPassword = await bcrypt.hash(new_password, SALT_ROUNDS);
+    await updatePassword(user.user_id, hashedPassword);
 
     return res.status(200).json({
       errorStatus: false,
-      message: "Password has been changed successfully.",
+      message: "Password updated successfully.",
     });
   } catch (err) {
     console.error("[resetPassword]", err);
     return res.status(500).json({
       errorStatus: true,
-      message: "Unable to process your request. Contact your administrator.",
+      message: "Unable to process your request.",
     });
   }
 };

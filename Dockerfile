@@ -32,6 +32,6 @@ RUN mkdir -p logs && chown -R appuser:appgroup /app
 # ─── Switch to Non-root User ──────────────────────────────────────────────────
 USER appuser
 
-EXPOSE 8088
+EXPOSE 2009
 
 CMD ["node", "index.js"]

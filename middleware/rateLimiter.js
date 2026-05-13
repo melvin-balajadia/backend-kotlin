@@ -19,7 +19,7 @@ const rateLimitHandler = (req, res, next, options) => {
 // ─── API Limiter (General) ────────────────────────────────────────────────────
 export const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // 100 requests per window
+  max: 200, // 100 requests per window
   standardHeaders: true, // returns RateLimit headers in response
   legacyHeaders: false, // disables X-RateLimit headers (deprecated)
   message: "Too many requests, please try again later.",
@@ -30,6 +30,15 @@ export const apiLimiter = rateLimit({
 export const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 10, // only 10 attempts per window
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: "Too many login attempts, please try again later.",
+  handler: rateLimitHandler,
+});
+
+export const resetPasswordLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
   standardHeaders: true,
   legacyHeaders: false,
   message: "Too many login attempts, please try again later.",

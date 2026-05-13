@@ -26,6 +26,7 @@
     "mysql2": "^3.17.4",
     "nodemon": "^3.1.14",
     "socket.io": "^4.8.3",
+    "ua-parser-js": "^2.0.9",
     "winston": "^3.19.0"
   }
 }

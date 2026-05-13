@@ -20,11 +20,14 @@ import transactionEntriesRoutes from "./routes/transactions.routes.js";
 import huEntriesRoutes from "./routes/handlingUnit.routes.js";
 import itemEntriesRoutes from "./routes/items.routes.js";
 import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import groupRoutes from "./routes/group.routes.js";
+import approvalRoutes from "./routes/approval.routes.js"; // ← new
 
 import errorHandler from "./middleware/errorHandler.js";
 import verifyJWT from "./middleware/verifyJWT.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
-import AppError from "./utils/appError.js"; // ← added
+import AppError from "./utils/appError.js";
 
 // ─── Load Environment Variables ───────────────────────────────────────────────
 dotenv.config();
@@ -61,7 +64,6 @@ process.on("uncaughtException", (err) => {
   logger.error("💥 Uncaught Exception:", err);
   process.exit(1);
 });
-
 process.on("unhandledRejection", (reason) => {
   logger.error("💥 Unhandled Rejection:", reason);
   process.exit(1);
@@ -70,24 +72,15 @@ process.on("unhandledRejection", (reason) => {
 // ─── Express App ──────────────────────────────────────────────────────────────
 const app = express();
 
-// Credentials & CORS — must be first
 app.use(credentials);
 app.use(cors(corsOptions));
-
-// Core Middleware
 app.use(compression());
 app.use(hpp());
 app.use(helmet());
-
-// Rate Limiting
 app.use("/api/v1", apiLimiter);
-
-// Body Parsers
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-// HTTP Logging
 app.use(
   morgan(NODE_ENV === "prod" ? "combined" : "dev", {
     stream: { write: (message) => logger.info(message.trim()) },
@@ -95,13 +88,16 @@ app.use(
 );
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
+// Public (auth doesn't require verifyJWT at the router level)
 app.use("/api/v1", authRoutes);
-app.use(verifyJWT);
+app.use("/api/v1", userRoutes);
+app.use("/api/v1", groupRoutes);
+app.use("/api/v1", approvalRoutes);
 app.use("/api/v1", transactionEntriesRoutes);
 app.use("/api/v1", huEntriesRoutes);
 app.use("/api/v1", itemEntriesRoutes);
 
-// ─── Health Check ─────────────────────────────────────────────────────────────  ← here
+// ─── Health Check ─────────────────────────────────────────────────────────────
 app.get("/health", async (req, res) => {
   try {
     const conn = await db.getConnection();
@@ -116,12 +112,12 @@ app.get("/health", async (req, res) => {
   }
 });
 
-// ─── 404 Handler ──────────────────────────────────────────────────────────────  ← added
+// ─── 404 Handler ──────────────────────────────────────────────────────────────
 app.use((req, res, next) => {
   next(new AppError(`Route ${req.originalUrl} not found`, 404));
 });
 
-// ─── Global Error Handler — must be last ──────────────────────────────────────
+// ─── Global Error Handler ─────────────────────────────────────────────────────
 app.use(errorHandler);
 
 // ─── SSL Helpers ──────────────────────────────────────────────────────────────
@@ -135,14 +131,15 @@ const sslExists = () =>
   fs.existsSync(certFilePath) &&
   fs.existsSync(caPath);
 
-const createSSLServer = () => {
-  const sslOptions = {
-    key: fs.readFileSync(keyPath, "utf8"),
-    cert: fs.readFileSync(certFilePath, "utf8"),
-    ca: fs.readFileSync(caPath, "utf8"),
-  };
-  return https.createServer(sslOptions, app);
-};
+const createSSLServer = () =>
+  https.createServer(
+    {
+      key: fs.readFileSync(keyPath, "utf8"),
+      cert: fs.readFileSync(certFilePath, "utf8"),
+      ca: fs.readFileSync(caPath, "utf8"),
+    },
+    app,
+  );
 
 const startWithSSL = (port, label) => {
   if (!sslExists()) {
