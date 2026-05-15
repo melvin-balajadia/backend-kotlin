@@ -7,7 +7,7 @@ export const TX_STATUS = {
   DRAFT: 0,
   SUBMITTED: 1,
   CHECKED: 2, // Checked by approved
-  NOTED: 3, // Noted by approved
+  NOTED: 3, // Legacy status; new flow completes on the Noted by approval.
   COMPLETED: 4,
   REJECTED: 5,
   RETURNED: 6,
@@ -48,13 +48,16 @@ const applyAction = async ({
   toStatus,
   actor,
   comment,
+  stepLabel,
 }) => {
   const conn = await db.getConnection();
   try {
     await conn.beginTransaction();
 
     await conn.query(
-      "UPDATE transaction_entry SET transaction_status = ? WHERE transaction_id = ?",
+      "UPDATE transaction_entry " +
+        "SET transaction_status = ?, updated_at = CURRENT_TIMESTAMP " +
+        "WHERE transaction_id = ?",
       [toStatus, transactionId],
     );
 
@@ -70,7 +73,7 @@ const applyAction = async ({
         toStatus,
         actor.user_id,
         actor.user_name,
-        STEP_LABEL[toStatus],
+        stepLabel ?? STEP_LABEL[toStatus],
         comment ?? null,
       ],
     );
@@ -128,7 +131,8 @@ export const submitTransaction = async (req, res, next) => {
 // ─── POST /transaction-entry/:id/approve ─────────────────────────────────────
 /**
  * Approver advances the transaction one step forward.
- * SUBMITTED(1) → CHECKED(2) → NOTED(3) → COMPLETED(4)
+ * SUBMITTED(1) → CHECKED(2) → COMPLETED(4)
+ * The second approval is the "Noted by" approval and completes the transaction.
  */
 export const approveTransaction = async (req, res, next) => {
   try {
@@ -139,8 +143,11 @@ export const approveTransaction = async (req, res, next) => {
 
     const progressMap = {
       [TX_STATUS.SUBMITTED]: TX_STATUS.CHECKED,
-      [TX_STATUS.CHECKED]: TX_STATUS.NOTED,
-      [TX_STATUS.NOTED]: TX_STATUS.COMPLETED,
+      [TX_STATUS.CHECKED]: TX_STATUS.COMPLETED,
+    };
+    const approvalStepLabel = {
+      [TX_STATUS.SUBMITTED]: "Checked by",
+      [TX_STATUS.CHECKED]: "Noted by",
     };
 
     const nextStatus = progressMap[tx.transaction_status];
@@ -160,6 +167,7 @@ export const approveTransaction = async (req, res, next) => {
       toStatus: nextStatus,
       actor: req.user,
       comment: req.body.comment ?? null,
+      stepLabel: approvalStepLabel[tx.transaction_status],
     });
 
     return res.status(200).json({
@@ -175,7 +183,7 @@ export const approveTransaction = async (req, res, next) => {
 // ─── POST /transaction-entry/:id/reject ──────────────────────────────────────
 /**
  * Approver permanently rejects the transaction.
- * Only allowed when pending approval (status 1, 2, or 3).
+ * Only allowed when pending approval (status 1 or 2).
  */
 export const rejectTransaction = async (req, res, next) => {
   try {
@@ -187,7 +195,6 @@ export const rejectTransaction = async (req, res, next) => {
     const approvableStatuses = [
       TX_STATUS.SUBMITTED,
       TX_STATUS.CHECKED,
-      TX_STATUS.NOTED,
     ];
     if (!approvableStatuses.includes(tx.transaction_status)) {
       return next(
@@ -221,7 +228,7 @@ export const rejectTransaction = async (req, res, next) => {
 /**
  * Approver returns the transaction to the creator for revision.
  * Creator can then edit and re-submit.
- * Only allowed when pending approval (status 1, 2, or 3).
+ * Only allowed when pending approval (status 1 or 2).
  */
 export const returnTransaction = async (req, res, next) => {
   try {
@@ -233,7 +240,6 @@ export const returnTransaction = async (req, res, next) => {
     const approvableStatuses = [
       TX_STATUS.SUBMITTED,
       TX_STATUS.CHECKED,
-      TX_STATUS.NOTED,
     ];
     if (!approvableStatuses.includes(tx.transaction_status)) {
       return next(

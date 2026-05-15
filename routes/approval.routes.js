@@ -18,7 +18,6 @@ router.use(verifyJWT);
 // ─── Approval actions ─────────────────────────────────────────────────────────
 router.post(
   "/transaction-entry/:id/submit",
-
   catchAsync(submitTransaction),
 );
 
@@ -43,7 +42,6 @@ router.post(
 // ─── Approval log (timeline data) ────────────────────────────────────────────
 router.get(
   "/transaction-entry/:id/logs",
-  checkPermission("transaction:view"),
   catchAsync(getApprovalLogs),
 );
 

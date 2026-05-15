@@ -1,6 +1,10 @@
 import db from "../config/db.js";
 import { paginate } from "../utils/paginate.js";
 
+const DRAFT_STATUS = 0;
+const RETURNED_STATUS = 6;
+const ARCHIVED_STATUS = 7;
+
 /* Create transaction */
 export const createTransactionEntries = async (req, res) => {
   const {
@@ -94,8 +98,24 @@ export const updateTransactionEntries = async (req, res) => {
       });
     }
 
-    // 0 = Draft, 1 = Submitted for Approval
-    const transaction_status = is_draft ? 0 : 1;
+    const [[tx]] = await db.query(
+      "SELECT transaction_status FROM transaction_entry WHERE transaction_id = ? LIMIT 1",
+      [transactionId],
+    );
+
+    if (!tx) {
+      return res.status(404).json({
+        success: false,
+        message: "Transaction not found",
+      });
+    }
+
+    const nextStatus =
+      is_draft === true && tx.transaction_status !== RETURNED_STATUS
+        ? DRAFT_STATUS
+        : tx.transaction_status;
+    const statusAssignment =
+      is_draft === true ? "      transaction_status = ?,\n" : "";
 
     const sql = `
     UPDATE transaction_entry
@@ -109,7 +129,7 @@ export const updateTransactionEntries = async (req, res) => {
       transaction_end_date = ?,
       transaction_start_time = ?,
       transaction_end_time = ?,
-      transaction_status = ?,
+${statusAssignment}
       updated_at = CURRENT_TIMESTAMP
     WHERE transaction_id = ?
   `;
@@ -124,7 +144,7 @@ export const updateTransactionEntries = async (req, res) => {
       transaction_end_date,
       transaction_start_time,
       transaction_end_time,
-      transaction_status,
+      ...(is_draft === true ? [nextStatus] : []),
       transactionId,
     ]);
 
@@ -137,7 +157,7 @@ export const updateTransactionEntries = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: is_draft ? "Saved as draft" : "Submitted for approval",
+      message: is_draft ? "Saved as draft" : "Transaction updated",
       data: {
         transaction_id: transactionId,
         transaction_idn,
@@ -149,7 +169,7 @@ export const updateTransactionEntries = async (req, res) => {
         transaction_end_date,
         transaction_start_time,
         transaction_end_time,
-        transaction_status,
+        transaction_status: nextStatus,
       },
     });
   } catch (err) {
@@ -171,14 +191,15 @@ export const getPaginatedTransactions = async (req, res) => {
   const offset = (page - 1) * limit;
 
   const [[{ total }]] = await db.query(
-    "SELECT COUNT(*) AS total FROM transaction_entry WHERE transaction_status != 2",
+    "SELECT COUNT(*) AS total FROM transaction_entry WHERE transaction_status != ?",
+    [ARCHIVED_STATUS],
   );
   const [rows] = await db.query(
     `SELECT * FROM transaction_entry
-   WHERE transaction_status != 2
+   WHERE transaction_status != ?
    ORDER BY transaction_id DESC
    LIMIT ? OFFSET ?`,
-    [limit, offset],
+    [ARCHIVED_STATUS, limit, offset],
   );
 
   res.json({
@@ -194,7 +215,8 @@ export const getPaginatedTransactions = async (req, res) => {
 /* Get all data */
 export const getTransactionEntries = async (req, res) => {
   const [rows] = await db.query(
-    "SELECT * FROM transaction_entry ORDER BY transaction_id DESC",
+    "SELECT * FROM transaction_entry WHERE transaction_status != ? ORDER BY transaction_id DESC",
+    [ARCHIVED_STATUS],
   );
 
   res.json({
@@ -211,7 +233,7 @@ export const getPaginatedTransactionEntries = async (req, res) => {
       query: req.query,
       table: "transaction_entry",
       db,
-      baseCondition: "transaction_status != 2",
+      baseCondition: `transaction_status != ${ARCHIVED_STATUS}`,
       searchColumns: [
         "transaction_idn",
         "transaction_transaction_type",
@@ -368,7 +390,7 @@ export const archiveTransaction = async (req, res) => {
       });
     }
 
-    if (tx.transaction_status === 2) {
+    if (tx.transaction_status === ARCHIVED_STATUS) {
       await conn.rollback();
       return res.status(409).json({
         success: false,
@@ -376,12 +398,12 @@ export const archiveTransaction = async (req, res) => {
       });
     }
 
-    // 2. Archive the transaction (status 2 = archived, keeps your 0/1 draft/submitted)
+    // 2. Archive the transaction with a status that does not overlap approval steps.
     await conn.query(
       `UPDATE transaction_entry
-       SET transaction_status = 2, updated_at = CURRENT_TIMESTAMP
+       SET transaction_status = ?, updated_at = CURRENT_TIMESTAMP
        WHERE transaction_id = ?`,
-      [transactionId],
+      [ARCHIVED_STATUS, transactionId],
     );
 
     // 3. Get all HU ids under this transaction (active or not — archive everything)
