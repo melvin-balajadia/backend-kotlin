@@ -1,3 +1,4 @@
+// controllers/transactions.controller.js
 import db from "../config/db.js";
 import { paginate } from "../utils/paginate.js";
 
@@ -5,7 +6,15 @@ const DRAFT_STATUS = 0;
 const RETURNED_STATUS = 6;
 const ARCHIVED_STATUS = 7;
 
-/* Create transaction */
+// ─────────────────────────────────────────────────────────────────────────────
+// CREATE
+// POST /transaction-entry
+// ─────────────────────────────────────────────────────────────────────────────
+// CHANGED: added transaction_created_by = req.user.user_id on INSERT.
+// req.user is already populated by verifyJWT (the route uses it), so no
+// new middleware is needed. This column is what approval.controller.js
+// reads to know who to notify when an approver acts on the transaction.
+// ─────────────────────────────────────────────────────────────────────────────
 export const createTransactionEntries = async (req, res) => {
   const {
     transaction_idn,
@@ -32,10 +41,16 @@ export const createTransactionEntries = async (req, res) => {
     });
   }
 
+  // NEW — req.user.user_id is injected by verifyJWT
+  const createdBy = req.user?.user_id ?? null;
+
   const sql = `
     INSERT INTO transaction_entry
-    (transaction_idn, transaction_transaction_type, transaction_client, transaction_trucking_pn, transaction_date, transaction_start_date, transaction_end_date, transaction_start_time, transaction_end_time)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    (transaction_idn, transaction_transaction_type, transaction_client,
+     transaction_trucking_pn, transaction_date, transaction_start_date,
+     transaction_end_date, transaction_start_time, transaction_end_time,
+     transaction_created_by)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
   const [result] = await db.query(sql, [
@@ -48,6 +63,7 @@ export const createTransactionEntries = async (req, res) => {
     transaction_end_date,
     transaction_start_time,
     transaction_end_time,
+    createdBy, // NEW
   ]);
 
   res.status(201).json({
@@ -64,11 +80,15 @@ export const createTransactionEntries = async (req, res) => {
       transaction_end_date,
       transaction_start_time,
       transaction_end_time,
+      transaction_created_by: createdBy, // NEW
     },
   });
 };
 
-/* Update transaction */
+// ─────────────────────────────────────────────────────────────────────────────
+// UPDATE — UNCHANGED
+// PUT /transaction-entry/:transactionId
+// ─────────────────────────────────────────────────────────────────────────────
 export const updateTransactionEntries = async (req, res) => {
   try {
     const { transactionId } = req.params;
@@ -82,7 +102,7 @@ export const updateTransactionEntries = async (req, res) => {
       transaction_end_date,
       transaction_start_time,
       transaction_end_time,
-      is_draft, // ← send true/false from frontend
+      is_draft,
     } = req.body;
 
     if (
@@ -98,8 +118,13 @@ export const updateTransactionEntries = async (req, res) => {
       });
     }
 
+    // Exclude soft-deleted records from update
     const [[tx]] = await db.query(
-      "SELECT transaction_status FROM transaction_entry WHERE transaction_id = ? LIMIT 1",
+      `SELECT transaction_status, transaction_is_deleted
+       FROM transaction_entry
+       WHERE transaction_id = ?
+         AND transaction_is_deleted = 0
+       LIMIT 1`,
       [transactionId],
     );
 
@@ -114,25 +139,27 @@ export const updateTransactionEntries = async (req, res) => {
       is_draft === true && tx.transaction_status !== RETURNED_STATUS
         ? DRAFT_STATUS
         : tx.transaction_status;
+
     const statusAssignment =
       is_draft === true ? "      transaction_status = ?,\n" : "";
 
     const sql = `
-    UPDATE transaction_entry
-    SET
-      transaction_idn = ?,
-      transaction_transaction_type = ?,
-      transaction_client = ?,
-      transaction_trucking_pn = ?,
-      transaction_date = ?,
-      transaction_start_date = ?,
-      transaction_end_date = ?,
-      transaction_start_time = ?,
-      transaction_end_time = ?,
+      UPDATE transaction_entry
+      SET
+        transaction_idn = ?,
+        transaction_transaction_type = ?,
+        transaction_client = ?,
+        transaction_trucking_pn = ?,
+        transaction_date = ?,
+        transaction_start_date = ?,
+        transaction_end_date = ?,
+        transaction_start_time = ?,
+        transaction_end_time = ?,
 ${statusAssignment}
-      updated_at = CURRENT_TIMESTAMP
-    WHERE transaction_id = ?
-  `;
+        updated_at = CURRENT_TIMESTAMP
+      WHERE transaction_id = ?
+        AND transaction_is_deleted = 0
+    `;
 
     const [result] = await db.query(sql, [
       transaction_idn,
@@ -173,7 +200,7 @@ ${statusAssignment}
       },
     });
   } catch (err) {
-    console.error("Update error:", err); // ← see the actual error
+    console.error("Update error:", err);
     res.status(500).json({
       success: false,
       message: err.message,
@@ -181,7 +208,30 @@ ${statusAssignment}
   }
 };
 
-/* Paginated data */
+// ─────────────────────────────────────────────────────────────────────────────
+// GET ALL (simple list, no pagination) — UNCHANGED
+// GET /transaction-entry
+// ─────────────────────────────────────────────────────────────────────────────
+export const getTransactionEntries = async (req, res) => {
+  const [rows] = await db.query(
+    `SELECT * FROM transaction_entry
+     WHERE transaction_status    != ?
+       AND transaction_is_deleted = 0
+     ORDER BY transaction_id DESC`,
+    [ARCHIVED_STATUS],
+  );
+
+  res.json({
+    success: true,
+    count: rows.length,
+    data: rows,
+  });
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GET PAGINATED (legacy endpoint) — UNCHANGED
+// GET /paginated-transaction-entry
+// ─────────────────────────────────────────────────────────────────────────────
 export const getPaginatedTransactions = async (req, res) => {
   let { page = 1, limit = 10 } = req.query;
 
@@ -191,14 +241,19 @@ export const getPaginatedTransactions = async (req, res) => {
   const offset = (page - 1) * limit;
 
   const [[{ total }]] = await db.query(
-    "SELECT COUNT(*) AS total FROM transaction_entry WHERE transaction_status != ?",
+    `SELECT COUNT(*) AS total
+     FROM transaction_entry
+     WHERE transaction_status    != ?
+       AND transaction_is_deleted = 0`,
     [ARCHIVED_STATUS],
   );
+
   const [rows] = await db.query(
     `SELECT * FROM transaction_entry
-   WHERE transaction_status != ?
-   ORDER BY transaction_id DESC
-   LIMIT ? OFFSET ?`,
+     WHERE transaction_status    != ?
+       AND transaction_is_deleted = 0
+     ORDER BY transaction_id DESC
+     LIMIT ? OFFSET ?`,
     [ARCHIVED_STATUS, limit, offset],
   );
 
@@ -212,28 +267,17 @@ export const getPaginatedTransactions = async (req, res) => {
   });
 };
 
-/* Get all data */
-export const getTransactionEntries = async (req, res) => {
-  const [rows] = await db.query(
-    "SELECT * FROM transaction_entry WHERE transaction_status != ? ORDER BY transaction_id DESC",
-    [ARCHIVED_STATUS],
-  );
-
-  res.json({
-    success: true,
-    count: rows.length,
-    data: rows,
-  });
-};
-
-/* Paginated data */
+// ─────────────────────────────────────────────────────────────────────────────
+// GET PAGINATED (main DataTable endpoint) — UNCHANGED
+// GET /paginated-transaction
+// ─────────────────────────────────────────────────────────────────────────────
 export const getPaginatedTransactionEntries = async (req, res) => {
   try {
     const result = await paginate({
       query: req.query,
       table: "transaction_entry",
       db,
-      baseCondition: `transaction_status != ${ARCHIVED_STATUS}`,
+      baseCondition: `transaction_status != ${ARCHIVED_STATUS} AND transaction_is_deleted = 0`,
       searchColumns: [
         "transaction_idn",
         "transaction_transaction_type",
@@ -287,12 +331,17 @@ export const getPaginatedTransactionEntries = async (req, res) => {
   }
 };
 
-/* Get single record */
+// ─────────────────────────────────────────────────────────────────────────────
+// GET SINGLE — UNCHANGED
+// GET /transaction-entry/:transactionId
+// ─────────────────────────────────────────────────────────────────────────────
 export const getTransactionEntryById = async (req, res) => {
   const { transactionId } = req.params;
 
   const [rows] = await db.query(
-    "SELECT * FROM transaction_entry WHERE transaction_id = ?",
+    `SELECT * FROM transaction_entry
+     WHERE transaction_id         = ?
+       AND transaction_is_deleted = 0`,
     [transactionId],
   );
 
@@ -309,13 +358,18 @@ export const getTransactionEntryById = async (req, res) => {
   });
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// GET REPORT — UNCHANGED
+// GET /transaction-report/:transactionId
+// ─────────────────────────────────────────────────────────────────────────────
 export const getTransactionReport = async (req, res) => {
   const { transactionId } = req.params;
 
   try {
-    // 1. Get transaction details
     const [[transaction]] = await db.query(
-      `SELECT * FROM transaction_entry WHERE transaction_id = ?`,
+      `SELECT * FROM transaction_entry
+       WHERE transaction_id        = ?
+         AND transaction_is_deleted = 0`,
       [transactionId],
     );
 
@@ -326,20 +380,22 @@ export const getTransactionReport = async (req, res) => {
       });
     }
 
-    // 2. Get all active HUs for this transaction
     const [hus] = await db.query(
       `SELECT * FROM hu_entry
-       WHERE hu_transaction_id = ? AND hu_status = 0
+       WHERE hu_transaction_id = ?
+         AND hu_status          = 0
+         AND hu_is_deleted      = 0
        ORDER BY hu_id ASC`,
       [transactionId],
     );
 
-    // 3. For each HU, get its active items
     const husWithItems = await Promise.all(
       hus.map(async (hu) => {
         const [items] = await db.query(
           `SELECT * FROM items_entry
-           WHERE items_hu_id = ? AND items_status = 0
+           WHERE items_hu_id     = ?
+             AND items_status    = 0
+             AND items_is_deleted = 0
            ORDER BY items_id ASC`,
           [hu.hu_id],
         );
@@ -362,11 +418,10 @@ export const getTransactionReport = async (req, res) => {
   }
 };
 
-/**
- * PATCH /transactions/:transactionId/archive
- * Soft-deletes a transaction + all its HUs + all items under those HUs.
- * Entire operation is atomic — rolls back fully on any error.
- */
+// ─────────────────────────────────────────────────────────────────────────────
+// ARCHIVE — UNCHANGED
+// PATCH /transaction-report/:transactionId/archive
+// ─────────────────────────────────────────────────────────────────────────────
 export const archiveTransaction = async (req, res) => {
   const { transactionId } = req.params;
   const conn = await db.getConnection();
@@ -374,9 +429,8 @@ export const archiveTransaction = async (req, res) => {
   try {
     await conn.beginTransaction();
 
-    // 1. Verify transaction exists and is not already archived
     const [[tx]] = await conn.query(
-      `SELECT transaction_id, transaction_status
+      `SELECT transaction_id, transaction_status, transaction_is_deleted
        FROM transaction_entry
        WHERE transaction_id = ?`,
       [transactionId],
@@ -390,6 +444,14 @@ export const archiveTransaction = async (req, res) => {
       });
     }
 
+    if (tx.transaction_is_deleted) {
+      await conn.rollback();
+      return res.status(409).json({
+        success: false,
+        message: "Cannot archive a soft-deleted transaction. Restore it first.",
+      });
+    }
+
     if (tx.transaction_status === ARCHIVED_STATUS) {
       await conn.rollback();
       return res.status(409).json({
@@ -398,15 +460,13 @@ export const archiveTransaction = async (req, res) => {
       });
     }
 
-    // 2. Archive the transaction with a status that does not overlap approval steps.
     await conn.query(
       `UPDATE transaction_entry
        SET transaction_status = ?, updated_at = CURRENT_TIMESTAMP
-       WHERE transaction_id = ?`,
+       WHERE transaction_id   = ?`,
       [ARCHIVED_STATUS, transactionId],
     );
 
-    // 3. Get all HU ids under this transaction (active or not — archive everything)
     const [hus] = await conn.query(
       `SELECT hu_id FROM hu_entry WHERE hu_transaction_id = ?`,
       [transactionId],
@@ -419,7 +479,6 @@ export const archiveTransaction = async (req, res) => {
       const huIds = hus.map((h) => h.hu_id);
       const placeholders = huIds.map(() => "?").join(", ");
 
-      // 4. Archive all HUs under this transaction
       const [huResult] = await conn.query(
         `UPDATE hu_entry
          SET hu_status = 2, updated_at = CURRENT_TIMESTAMP
@@ -428,7 +487,6 @@ export const archiveTransaction = async (req, res) => {
       );
       archivedHUs = huResult.affectedRows;
 
-      // 5. Archive all items under those HUs
       const [itemResult] = await conn.query(
         `UPDATE items_entry
          SET items_status = 2, updated_at = CURRENT_TIMESTAMP

@@ -22,10 +22,11 @@ import itemEntriesRoutes from "./routes/items.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import groupRoutes from "./routes/group.routes.js";
-import approvalRoutes from "./routes/approval.routes.js"; // ← new
+import approvalRoutes from "./routes/approval.routes.js";
+import softDeleteRoutes from "./routes/softDelete.routes.js";
+import notificationRoutes from "./routes/notifications.routes.js";
 
 import errorHandler from "./middleware/errorHandler.js";
-import verifyJWT from "./middleware/verifyJWT.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 import AppError from "./utils/appError.js";
 
@@ -96,6 +97,8 @@ app.use("/api/v1", approvalRoutes);
 app.use("/api/v1", transactionEntriesRoutes);
 app.use("/api/v1", huEntriesRoutes);
 app.use("/api/v1", itemEntriesRoutes);
+app.use("/api/v1", softDeleteRoutes);
+app.use("/api/v1", notificationRoutes);
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get("/health", async (req, res) => {
